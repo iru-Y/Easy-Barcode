@@ -3,7 +3,7 @@ import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserMultiFormatReader, Result } from '@zxing/library';
 import { CommonModule } from '@angular/common';
-import { BarcodeService } from '../../services/barcode.service';
+import { BarcodeService } from '../../../services/barcode.service';
 
 @Component({
   selector: 'app-barcode-scanner',
@@ -49,7 +49,6 @@ startScanner() {
       alert(`Erro ao acessar a câmera: ${err.message}`);
     });
 }
-
 
  async onDetect(result: Result) {
   const raw = result.getText();
