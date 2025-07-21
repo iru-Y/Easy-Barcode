@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="input-group">
+    <label for="countInput">Quantas vezes enviar o mesmo código?</label>
+    <input id="countInput" type="number" min="1" [formControl]="countControl" placeholder="Digite um número inteiro" (blur)="countControl.markAsTouched()">
+    @if (countControl.hasError('required') && countControl.touched) {
+      <div class="error">Campo obrigatório</div>
+    }
+    @if (countControl.hasError('min') && countControl.touched) {
+      <div class="error">Deve ser maior que 0</div>
+    }
+  </div>
+
+  @if (isSending) {
+    <div class="progress">
+      <progress></progress>
+    </div>
+  }
+
+  <div class="video-container">
+    <video #videoElement width="100%" height="auto"></video>
+  </div>
+
+  <button (click)="startScanner()">Iniciar Scanner</button>
+</div>
