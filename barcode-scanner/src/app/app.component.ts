@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { BarcodeScannerComponent } from "./home/components/barcode-scanner/barcode-scanner.component";
 import { HomeComponent } from "./home/home.component";
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from "./login/login.component";
+
 
 @Component({
   selector: 'app-root',
-  imports: [HomeComponent],
+  imports: [HomeComponent, RouterModule, LoginComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
