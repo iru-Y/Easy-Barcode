@@ -1,4 +1,10 @@
-header{
+@media (max-width: 1080px) {
+  header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--header-border);
+    padding: var(--header-padding);
+  }
+  
 }

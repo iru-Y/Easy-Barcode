@@ -1,4 +1,12 @@
-body {
+html, body {
   margin: 0;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+:root{
+  --header-border:1px solid #e5e7eb;
+  --header-padding: 0 1.5rem;
+  
+
 }
