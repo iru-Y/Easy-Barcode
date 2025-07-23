@@ -3,8 +3,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: var(--header-border);
     padding: var(--header-padding);
+    background-color: #161616;
+    color: white;
   }
 
   header h1 {

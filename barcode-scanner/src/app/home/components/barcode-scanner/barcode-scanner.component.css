@@ -60,7 +60,7 @@
     display: flex;
     width: 160px;
     height: 40px;
-    background-color: #090c10;
+    background-color:  #161616;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
@@ -88,7 +88,7 @@
   button {
     width: 30px;
     height: 30px;
-    background: #090c10;
+    background:  #161616;
     border-radius: 50%;
     border: none;
     cursor: pointer;

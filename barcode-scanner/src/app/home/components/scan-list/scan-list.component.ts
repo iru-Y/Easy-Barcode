@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BarcodeService } from '../../../services/barcode.service';
 
 @Component({
   selector: 'app-scan-list',
@@ -7,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './scan-list.component.css'
 })
 export class ScanListComponent {
+  constructor(private barcodeService: BarcodeService){}
 
+
+async ngOnInit() {
+  const barcodes = await this.barcodeService.getUploadedBarcodes();
+  console.log('Arquivos enviados:', barcodes);
+}
 }
