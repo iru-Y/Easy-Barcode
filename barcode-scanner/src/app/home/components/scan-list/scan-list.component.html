@@ -1,4 +1,8 @@
 <section>
     <h1>Códigos Escaneados</h1>
-    
+    <div class="last-scan">
+        @for (item of barcodes; track $index) {
+           <p>{{ item }}</p>
+        }
+    </div>
 </section>
