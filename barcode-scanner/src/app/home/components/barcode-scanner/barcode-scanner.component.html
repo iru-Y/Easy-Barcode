@@ -1,18 +1,25 @@
 <div class="container">
   <div class="input-group">
     @if (countControl.hasError('min') && countControl.touched) {
-      <div class="error">Deve ser maior que 0</div>
+    <div class="error">Deve ser maior que 0</div>
     }
   </div>
 
   @if (isSending) {
-    <div class="progress">
-      <progress></progress>
-    </div>
+  <div class="progress">
+    <progress></progress>
+  </div>
   }
-
-  <div class="video-container">
-
+  <div class="control">
+   <div class="quantity">
+     <span>Quantidade: <input
+      id="countInput"
+      type="number"
+      min="1"
+      [formControl]="countControl"
+      (blur)="countControl.markAsTouched()"
+    /></span>
+   </div>
     <button (click)="startScanner()" aria-label="Recarregar scanner">
       <img
         ngSrc="/refresh.png"
@@ -21,16 +28,12 @@
         height="20"
       />
     </button>
-
+  </div>
+  <div class="video-container">
     <video #videoElement autoplay playsinline muted></video>
   </div>
 
-  <input
-    id="countInput"
-    type="number"
-    min="1"
-    [formControl]="countControl"
-    placeholder="repeat"
-    (blur)="countControl.markAsTouched()"
-  />
+ <p>
+  Posicione o código dentro da área de leitura
+ </p>
 </div>

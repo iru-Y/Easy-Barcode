@@ -1,12 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 html, body {
   margin: 0;
   font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
-
+span{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: white;
+}
+p{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  color: white;
+  font-size: 12px;
+}
 :root{
   --header-border:1px solid #e5e7eb;
   --header-padding: 0 1.5rem;
-  
+  --body-scanner-color: #1F2937;
 
 }

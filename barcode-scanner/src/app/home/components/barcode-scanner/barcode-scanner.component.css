@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: var(--body-scanner-color);
   }
 
   .input-group {
@@ -31,9 +32,9 @@
 
   .video-container {
     position: relative;
-    width: 80%;
-    height: 240px;
-    margin-bottom: 12px;
+    width: 220px;
+    height: 220px;
+    margin: 30px;
     background-color: #1d2634;
     border-radius: 8px;
     overflow: hidden;
@@ -46,16 +47,48 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    
   }
 
-  .video-container button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+  .control {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .quantity {
+    display: flex;
+    width: 160px;
+    height: 40px;
+    background-color: #090c10;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+  }
+
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 70px;
+    text-align: center;
+    height: 26px;
+    max-width: 300px;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+  }
+  span{
+    font-size: 12px;
+  }
+  button {
     width: 30px;
     height: 30px;
-    background: rgba(0, 0, 0, 0.3);
+    background: #090c10;
     border-radius: 50%;
     border: none;
     cursor: pointer;
@@ -64,26 +97,14 @@
     justify-content: center;
   }
 
-  .video-container button img {
+  button img {
     width: 18px;
     height: 18px;
-    
   }
 
-  input {
-    position: absolute;
-    padding: 8px;
-    top: 290px;
-    right: 50px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 60px;
-    max-width: 300px;
-  }
-
-  input:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
+  p {
+    background-color: #090c10;
+    padding: 10px 30px;
+    border-radius: 5px;
   }
 }
