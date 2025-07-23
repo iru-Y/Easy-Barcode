@@ -8,4 +8,19 @@
     font-size: 18px;
     font-weight: 400;
   }
+  p{
+    color: black
+  }
+
+  .last-scan{
+    width: 100%;
+  }
+  .scan-item{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0px;
+  }
 }
