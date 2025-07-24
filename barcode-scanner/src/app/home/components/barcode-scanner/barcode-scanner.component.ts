@@ -4,18 +4,16 @@ import {
   AfterViewInit,
   ViewChild,
   ElementRef,
-  ChangeDetectorRef
 } from '@angular/core';
-import { ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { BrowserMultiFormatReader, Result } from '@zxing/library';
+import { BarcodeService } from '../../../domain/services/barcode.service';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { BarcodeService } from '../../../services/barcode.service';
 
 @Component({
   selector: 'app-barcode-scanner',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, NgOptimizedImage],
+  imports: [CommonModule, ReactiveFormsModule, NgOptimizedImage],
   templateUrl: './barcode-scanner.component.html',
   styleUrls: ['./barcode-scanner.component.css']
 })
@@ -24,10 +22,18 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
 
   countControl = new FormControl('', [Validators.required, Validators.min(1)]);
   desiredCount: number | null = null;
-  lastScannedCode: string | null = null;
   isSending = false;
 
   private codeReader = new BrowserMultiFormatReader();
+
+  scannedBarcodes: string[] = [];
+
+  showModal = false;
+
+  scannedFiles: { filename: string }[] = [];
+
+  selectedFilename: string | null = null;
+  newFilenameControl = new FormControl('', [Validators.required]);
 
   constructor(private barcodeService: BarcodeService) {}
 
@@ -36,6 +42,15 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
       const num = parseInt(value || '', 10);
       this.desiredCount = isNaN(num) || num < 1 ? null : num;
     });
+    this.loadScannedFiles();
+  }
+
+  async loadScannedFiles() {
+    try {
+      this.scannedFiles = await this.barcodeService.getUploadedBarcodes();
+    } catch {
+      this.scannedFiles = [];
+    }
   }
 
   ngAfterViewInit(): void {
@@ -43,8 +58,6 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
   }
 
   startScanner(): void {
-    
-
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
       console.warn('Seu navegador não suporta acesso à câmera.');
       return;
@@ -61,29 +74,54 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
       });
   }
 
-  async onDetect(result: Result): Promise<void> {
-    const raw = result.getText();
+  onDetect(result: Result): void {
+    const raw = result.getText().trim();
+    if (!raw) return;
 
-    if (raw === this.lastScannedCode) return;
+    if (this.scannedBarcodes.includes(raw)) return;
+    this.scannedBarcodes.push(raw);
+  }
 
-    this.lastScannedCode = raw;
+  openModal() {
+    if (this.scannedBarcodes.length === 0) {
+      alert('Nenhum código escaneado para enviar.');
+      return;
+    }
+    this.selectedFilename = null;
+    this.newFilenameControl.reset();
+    this.showModal = true;
+  }
+
+  async confirmSend() {
+    let filenameToSend = this.selectedFilename;
+    if (!filenameToSend) {
+      if (!this.newFilenameControl.value || !this.newFilenameControl.value.trim()) {
+        alert('Informe um nome válido para o novo arquivo.');
+        return;
+      }
+      filenameToSend = this.newFilenameControl.value.trim();
+      if (!filenameToSend.toLowerCase().endsWith('.csv')) {
+        filenameToSend += '.csv';
+      }
+    }
+
     this.isSending = true;
 
-    const count = this.desiredCount ?? 1;
+    const quantity = this.desiredCount ?? 1;
+    const expandedBarcodes = this.scannedBarcodes.flatMap(code => Array(quantity).fill(code));
 
-    for (let i = 0; i < count; i++) {
-      await this.barcodeService.sendBarcode(raw);
+    try {
+      await this.barcodeService.sendBarcode(filenameToSend, expandedBarcodes);
+      alert(`📦 Barcodes enviados para arquivo: ${filenameToSend}`);
+      this.scannedBarcodes = [];
+      this.countControl.setValue('');
+      this.countControl.markAsUntouched();
+      await this.loadScannedFiles();
+      this.showModal = false;
+    } catch (e) {
+      alert('Erro ao enviar os barcodes.');
     }
 
     this.isSending = false;
-
-    if (this.desiredCount !== null) {
-      this.countControl.setValue('');
-      this.countControl.markAsUntouched();
-    }
-
-    setTimeout(() => {
-      this.lastScannedCode = null;
-    }, 1000);
   }
 }

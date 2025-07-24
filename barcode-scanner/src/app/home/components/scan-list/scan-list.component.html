@@ -1,16 +1,16 @@
-<section>
+<section class="scanned-codes">
   <h1>Códigos Escaneados</h1>
   <div class="last-scan">
     @for (item of barcodes; track $index) {
-    <div class="scan-item">
-      <div>
-        <p>{{ item }}</p>
-        <p>Escaneado há 2 minutos</p>
+      <div class="scan-item">
+        <div class="scan-info">
+          <p class="barcode-text">{{ item }}</p>
+          <p class="scan-time">Escaneado há 2 minutos</p>
+        </div>
+        <button class="btn-action">
+          <img ngSrc="" alt="Ícone da ação" />
+        </button>
       </div>
-      <button>
-        <img ngSrc="" alt="">
-      </button>
-    </div>
     }
   </div>
 </section>

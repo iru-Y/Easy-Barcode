@@ -10,17 +10,23 @@
     <progress></progress>
   </div>
   }
+
   <div class="control">
-   <div class="quantity">
-     <span>Quantidade: <input
-      id="countInput"
-      type="number"
-      min="1"
-      [formControl]="countControl"
-      (blur)="countControl.markAsTouched()"
-    /></span>
-   </div>
-    <button (click)="startScanner()" aria-label="Recarregar scanner">
+    <div class="quantity">
+      <span>
+        Quantidade:
+        <input
+          id="countInput"
+          type="number"
+          min="1"
+          [formControl]="countControl"
+          (blur)="countControl.markAsTouched()"
+        />
+      </span>
+      
+    </div>
+
+    <button (click)="startScanner()" aria-label="Recarregar scanner" class="refresh-scan">
       <img
         ngSrc="/refresh.png"
         alt="Ícone de recarregar"
@@ -29,11 +35,61 @@
       />
     </button>
   </div>
+
   <div class="video-container">
     <video #videoElement autoplay playsinline muted></video>
   </div>
+  <button
+        class="send-codes"
+        (click)="openModal()"
+        [disabled]="scannedBarcodes.length === 0 || isSending"
+        aria-label="Enviar códigos escaneados"
+      >
+        Enviar códigos ({{ scannedBarcodes.length }})
+      </button>
+  <p>Posicione o código dentro da área de leitura</p>
 
- <p>
-  Posicione o código dentro da área de leitura
- </p>
+ 
 </div>
+
+@if (showModal) {
+<div class="modal-overlay">
+  <div class="modal-content">
+    <h3>Escolha o arquivo para salvar os códigos</h3>
+
+    <p>Arquivos existentes:</p>
+    <ul>
+      @for (file of scannedFiles; track $index) {
+      <li>
+        <label>
+          <input
+            type="radio"
+            name="selectedFile"
+            [value]="file.filename"
+            (change)="selectedFilename = file.filename"
+            [checked]="selectedFilename === file.filename"
+          />
+          {{ file.filename }}
+        </label>
+      </li>
+      }
+    </ul>
+
+    <p>Ou crie um arquivo novo:</p>
+    <input
+      type="text"
+      placeholder="Novo nome de arquivo (ex: produtos.csv)"
+      [formControl]="newFilenameControl"
+    />
+
+    <div class="modal-buttons">
+      <button (click)="confirmSend()" [disabled]="isSending">
+        Confirmar envio
+      </button>
+      <button (click)="showModal = false" [disabled]="isSending">
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>
+}

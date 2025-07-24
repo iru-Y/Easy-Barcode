@@ -1,22 +1,24 @@
-import { Component } from '@angular/core';
-import { BarcodeService } from '../../../services/barcode.service';
+import { Component, OnInit } from '@angular/core';
+import { BarcodeService } from '../../../domain/services/barcode.service';
 import { CommonModule } from '@angular/common';
+import { ScannerFileDto } from '../../../domain/models/scanner-file-dto';
 
 @Component({
   selector: 'app-scan-list',
+  standalone: true,             
   imports: [CommonModule],
   templateUrl: './scan-list.component.html',
-  styleUrl: './scan-list.component.css'
+  styleUrls: ['./scan-list.component.css']  
 })
-export class ScanListComponent {
+export class ScanListComponent implements OnInit {
 
-    barcodes: string[] = [];
+  barcodes: ScannerFileDto[] = [];
 
   constructor(private barcodeService: BarcodeService){}
 
+  async ngOnInit() {
+    this.barcodes = await this.barcodeService.getUploadedBarcodes();
+    console.log('Arquivos enviados:', this.barcodes);
+  }
 
-async ngOnInit() {
-  this.barcodes = await this.barcodeService.getUploadedBarcodes();
-  console.log('Arquivos enviados:', this.barcodes);
-}
 }

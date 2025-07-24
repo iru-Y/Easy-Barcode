@@ -1,26 +1,29 @@
+
 @media (max-width: 1080px) {
-  section {
+  .scanned-codes {
     padding: 12px;
   }
 
-  h1 {
-    font-family: "Roboto", sans-serif;
+  .scanned-codes h1 {
     font-size: 18px;
     font-weight: 400;
   }
-  p{
-    color: black
+
+  .scan-item {
+    padding: 10px;
+    margin-bottom: 8px;
   }
 
-  .last-scan{
-    width: 100%;
+  .barcode-text {
+    font-size: 14px;
   }
-  .scan-item{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px 0px;
+
+  .scan-time {
+    font-size: 11px;
+  }
+
+  .btn-action img {
+    width: 18px;
+    height: 18px;
   }
 }
