@@ -36,7 +36,6 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
 
   selectedFilename: string | null = null;
   newFilenameControl = new FormControl('', [Validators.required]);
-  private pollingIntervalId: any;
 
   constructor(
     private barcodeService: BarcodeService,
@@ -51,9 +50,7 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
 
     this.loadScannedFiles();
 
-    this.pollingIntervalId = setInterval(() => {
-      this.loadScannedFiles();
-    }, 3000);
+   
   }
 
  
