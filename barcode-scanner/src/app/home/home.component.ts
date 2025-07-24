@@ -7,6 +7,7 @@ import { ScanListComponent } from "./components/scan-list/scan-list.component";
   selector: 'app-home',
   imports: [BarcodeScannerComponent, HeaderComponent, ScanListComponent],
   templateUrl: './home.component.html',
+  standalone: true,
   styleUrl: './home.component.css'
 })
 export class HomeComponent {

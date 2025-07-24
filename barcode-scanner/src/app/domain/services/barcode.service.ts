@@ -7,42 +7,26 @@ import { ScannerFileDto } from '../models/scanner-file-dto';
   providedIn: 'root',
 })
 export class BarcodeService {
-  url: string = 'barcode';
+  url: string = '/barcode';
 
   constructor(private http: HttpClient) {}
 
   async sendBarcode(
     filename: string,
     barcodes: string[]
-  ): Promise<ScannerFileDto | null> {
+  ): Promise<ScannerFileDto> {
     const body = { filename, barcodes };
 
-    try {
-      const response = await firstValueFrom(
-        this.http.post<ScannerFileDto>(`${this.url}`, body, {
-          headers: { 'Content-Type': 'application/json' },
-        })
-      );
-      alert('📦 Barcodes enviados com sucesso!');
-      return response;
-    } catch (error: any) {
-      const msg = error?.error?.message || error.message || 'Erro desconhecido';
-      alert(`❌ Erro ao enviar: ${msg}`);
-      return null;
-    }
+    return await firstValueFrom(
+      this.http.post<ScannerFileDto>(`${this.url}`, body, {
+        headers: { 'Content-Type': 'application/json' },
+      })
+    );
   }
 
   async getUploadedBarcodes(): Promise<ScannerFileDto[]> {
-    try {
-      const response = await firstValueFrom(
-        this.http.get<ScannerFileDto[]>(`${this.url}`)
-      );
-      return response;
-    } catch (error: any) {
-      const msg =
-        error?.error?.message || error.message || 'Erro ao buscar arquivos';
-      alert(`❌ ${msg}`);
-      return [];
-    }
+    return await firstValueFrom(
+      this.http.get<ScannerFileDto[]>(`${this.url}`)
+    );
   }
 }

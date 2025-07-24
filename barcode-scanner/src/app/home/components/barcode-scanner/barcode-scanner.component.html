@@ -15,7 +15,7 @@
     <div class="quantity">
       <span>
         Quantidade:
-        <input
+        <input class="set-quantity"
           id="countInput"
           type="number"
           min="1"
@@ -23,10 +23,13 @@
           (blur)="countControl.markAsTouched()"
         />
       </span>
-      
     </div>
 
-    <button (click)="startScanner()" aria-label="Recarregar scanner" class="refresh-scan">
+    <button
+      (click)="startScanner()"
+      aria-label="Recarregar scanner"
+      class="refresh-scan"
+    >
       <img
         ngSrc="/refresh.png"
         alt="Ícone de recarregar"
@@ -40,16 +43,14 @@
     <video #videoElement autoplay playsinline muted></video>
   </div>
   <button
-        class="send-codes"
-        (click)="openModal()"
-        [disabled]="scannedBarcodes.length === 0 || isSending"
-        aria-label="Enviar códigos escaneados"
-      >
-        Enviar códigos ({{ scannedBarcodes.length }})
-      </button>
+    class="send-codes"
+    (click)="openModal()"
+    [disabled]="scannedBarcodes.length === 0 || isSending"
+    aria-label="Enviar códigos escaneados"
+  >
+    Enviar códigos ({{ scannedBarcodes.length }})
+  </button>
   <p>Posicione o código dentro da área de leitura</p>
-
- 
 </div>
 
 @if (showModal) {
@@ -59,26 +60,30 @@
 
     <p>Arquivos existentes:</p>
     <ul>
-      @for (file of scannedFiles; track $index) {
-      <li>
-        <label>
-          <input
-            type="radio"
-            name="selectedFile"
-            [value]="file.filename"
-            (change)="selectedFilename = file.filename"
-            [checked]="selectedFilename === file.filename"
-          />
-          {{ file.filename }}
-        </label>
-      </li>
-      }
-    </ul>
+  @for (file of scannedFiles; track $index) {
+    <li>
+      <label class="custom-radio">
+        <input
+          class="select-file"
+          type="radio"
+          name="selectedFile"
+          [value]="file.filename"
+          (change)="selectedFilename = file.filename"
+          [checked]="selectedFilename === file.filename"
+        />
+        <span class="checkmark"></span>
+        {{ file.filename }}
+      </label>
+    </li>
+  }
+</ul>
+
 
     <p>Ou crie um arquivo novo:</p>
     <input
+      class="new-name"
       type="text"
-      placeholder="Novo nome de arquivo (ex: produtos.csv)"
+      placeholder="Novo nome de arquivo (ex: produtos)"
       [formControl]="newFilenameControl"
     />
 
