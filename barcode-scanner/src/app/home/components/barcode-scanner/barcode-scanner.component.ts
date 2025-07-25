@@ -106,6 +106,7 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
   }
 
   async confirmSend() {
+    this.loadScannedFiles();
     let filenameToSend = this.selectedFilename;
     if (!filenameToSend) {
       const input = this.newFilenameControl.value?.trim();

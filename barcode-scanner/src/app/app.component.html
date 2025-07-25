@@ -1,1 +1,9 @@
-<router-outlet></router-outlet>
+@if (isMobile) {
+      <router-outlet></router-outlet>
+} @else {
+<div class="desktop-warning">
+  <h1>DISPONÍVEL APENAS PARA DISPOSITIVOS MOBILE</h1>
+</div>
+
+}
+

@@ -1,16 +1,50 @@
 <section class="scanned-codes">
-  <h1>Códigos Escaneados</h1>
+  <h2 class="scanned-title">Códigos Escaneados</h2>
   <div class="last-scan">
     @for (item of barcodes; track $index) {
-      <div class="scan-item">
-        <div class="scan-info">
-          <p class="barcode-text">{{ item }}</p>
-          <p class="scan-time">Escaneado há 2 minutos</p>
-        </div>
-        <button class="btn-action">
-          <img ngSrc="" alt="Ícone da ação" />
-        </button>
+    <div class="scan-item">
+      <div class="scan-info">
+        <p class="barcode-text">{{ item.filename }}</p>
+        <p class="scan-time">
+          Escaneado em {{ item.createdAt | date : "dd/MM/yyyy HH:mm" }}
+        </p>
       </div>
+      <button class="btn-action" (click)="openModal(item)">
+        <img
+          ngSrc="/eye-icon.png"
+          alt="Visualizar códigos"
+          width="20"
+          height="20"
+        />
+      </button>
+    </div>
     }
   </div>
 </section>
+
+@if (modalOpen) {
+<div class="modal-overlay">
+  <div class="modal">
+    <h3 class="modal-title">Códigos Escaneados</h3>
+    <ul class="barcode-list">
+      @for (code of code; track $index) {
+      <li class="barcode-item">
+        {{ code }}
+        <button
+          class="copy-btn"
+          (click)="copyToClipboard(code)"
+          aria-label="Copiar código"
+        >
+          <img ngSrc="/copy.png" alt="copy" width="20" height="20" />
+        </button>
+      </li>
+      }
+    </ul>
+
+    <p class="scan-time">
+      Escaneado em {{ selectedDate | date : "dd/MM/yyyy HH:mm" }}
+    </p>
+    <button class="close-modal" (click)="closeModal()">Fechar</button>
+  </div>
+</div>
+}

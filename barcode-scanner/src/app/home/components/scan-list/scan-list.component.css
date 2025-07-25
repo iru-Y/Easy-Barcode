@@ -1,29 +1,123 @@
+.scanned-codes {
+  padding: 16px;
+  color: #f5f5f5;
+}
 
-@media (max-width: 1080px) {
-  .scanned-codes {
-    padding: 12px;
-  }
+.scanned-title {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: black;
+  font-weight: 500;
+}
 
-  .scanned-codes h1 {
-    font-size: 18px;
-    font-weight: 400;
-  }
+.last-scan {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
 
-  .scan-item {
-    padding: 10px;
-    margin-bottom: 8px;
-  }
+.scan-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--body-scanner-color);
+  border-radius: 8px;
+  padding: 10px 20px;
+  border: 1px solid #444;
+}
 
-  .barcode-text {
-    font-size: 14px;
-  }
+.scan-info {
+  display: flex;
+  flex-direction: column;
+}
 
-  .scan-time {
-    font-size: 11px;
-  }
+.barcode-text {
+  font-size: 14px;
+  color: #f5f5f5;
+  font-weight: 500;
+  word-break: break-all;
+}
 
-  .btn-action img {
-    width: 18px;
-    height: 18px;
-  }
+.scan-time {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 4px;
+}
+
+.btn-action {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.btn-action img {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background-color:var(--body-scanner-color);
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 320px;
+  width: 90%;
+  border: 1px solid #444;
+  color: #f5f5f5;
+}
+
+.modal-title {
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.barcode-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.barcode-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: var(--secondary-border);
+  border-radius: 5px;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.close-modal {
+  margin-top: 20px;
+  width: 100%;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.copy-btn{
+    all: unset;
+  cursor: pointer;
 }
