@@ -25,7 +25,7 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
   countControl = new FormControl('', [Validators.required, Validators.min(1)]);
   desiredCount: number | null = null;
   isSending = false;
-
+  
   private codeReader = new BrowserMultiFormatReader();
 
   scannedBarcodes: string[] = [];
