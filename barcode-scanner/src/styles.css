@@ -26,3 +26,6 @@ p{
   --secondary-border:1px solid #a2a7af;
 }
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

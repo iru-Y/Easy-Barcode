@@ -4,28 +4,55 @@ import {
   AfterViewInit,
   ViewChild,
   ElementRef,
-  OnDestroy
+  TemplateRef,
 } from '@angular/core';
-import { FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  Validators,
+  ReactiveFormsModule,
+  FormsModule,
+} from '@angular/forms';
 import { BrowserMultiFormatReader, Result } from '@zxing/library';
 import { BarcodeService } from '../../../domain/services/barcode.service';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { AlertService } from '../../../domain/services/alert.services';
 
+import {
+  MatDialog,
+  MatDialogRef,
+  MatDialogModule,
+} from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatRadioModule } from '@angular/material/radio';
+
 @Component({
   selector: 'app-barcode-scanner',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, NgOptimizedImage],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule,
+    MatRadioModule,
+  ],
   templateUrl: './barcode-scanner.component.html',
   styleUrls: ['./barcode-scanner.component.css'],
 })
 export class BarcodeScannerComponent implements OnInit, AfterViewInit {
   @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
-
+  @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
+  dialogRef!: MatDialogRef<any>;
   countControl = new FormControl('', [Validators.required, Validators.min(1)]);
   desiredCount: number | null = null;
   isSending = false;
-  
+
   private codeReader = new BrowserMultiFormatReader();
 
   scannedBarcodes: string[] = [];
@@ -39,7 +66,8 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
 
   constructor(
     private barcodeService: BarcodeService,
-    private alertService: AlertService
+    private alertService: AlertService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -49,11 +77,8 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
     });
 
     this.loadScannedFiles();
-
-   
   }
 
- 
   async loadScannedFiles() {
     try {
       this.scannedFiles = await this.barcodeService.getUploadedBarcodes();
@@ -96,17 +121,16 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
   }
 
   openModal() {
-    if (this.scannedBarcodes.length === 0) {
-      this.alertService.show('Nenhum código escaneado para enviar.');
-      return;
-    }
-    this.selectedFilename = null;
-    this.newFilenameControl.reset();
-    this.showModal = true;
+    this.dialogRef = this.dialog.open(this.modalTemplate, {
+      width: '400px',
+      disableClose: true,
+    panelClass: 'custom-dialog-container',
+    });
   }
 
   async confirmSend() {
-    this.loadScannedFiles();
+    if (!this.dialogRef) return;
+
     let filenameToSend = this.selectedFilename;
     if (!filenameToSend) {
       const input = this.newFilenameControl.value?.trim();
@@ -126,12 +150,14 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
 
     try {
       await this.barcodeService.sendBarcode(filenameToSend, expandedBarcodes);
-      this.alertService.show(`📦 Barcodes enviados para arquivo: ${filenameToSend}`);
+      this.alertService.show(
+        `📦 Barcodes enviados para arquivo: ${filenameToSend}`
+      );
       this.scannedBarcodes = [];
       this.countControl.setValue('');
       this.countControl.markAsUntouched();
       await this.loadScannedFiles();
-      this.showModal = false;
+      this.dialogRef.close();
     } catch (e) {
       this.alertService.show('Erro ao enviar os barcodes.');
     }

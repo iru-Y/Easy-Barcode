@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { provideRouter } from '@angular/router';
 import path from 'path';
 import { LoginComponent } from './login/login.component';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const routes = [
   { path: '', component: LoginComponent },
@@ -20,5 +21,6 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
+    provideAnimations()
   ],
 };

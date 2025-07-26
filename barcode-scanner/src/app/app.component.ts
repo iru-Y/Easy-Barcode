@@ -1,19 +1,19 @@
-import { Component, HostListener } from '@angular/core';
-import { BarcodeScannerComponent } from "./home/components/barcode-scanner/barcode-scanner.component";
-import { HomeComponent } from "./home/home.component";
+import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from "./login/login.component";
-
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'barcode-scanner';
-   isMobile = true;
+  isMobile = true;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
   ngOnInit() {
     this.checkScreenWidth();
@@ -25,6 +25,8 @@ export class AppComponent {
   }
 
   private checkScreenWidth() {
-    this.isMobile = window.innerWidth < 1200;
+    if (isPlatformBrowser(this.platformId)) {
+      this.isMobile = window.innerWidth < 1200;
+    }
   }
 }
