@@ -7,7 +7,7 @@ import { ScannerFileDto } from '../models/scanner-file-dto';
   providedIn: 'root',
 })
 export class BarcodeService {
-  url: string =  `${process.env.API_URL}/barcode`;
+  url: string =  '/barcode';
 
   constructor(private http: HttpClient) {}
 
