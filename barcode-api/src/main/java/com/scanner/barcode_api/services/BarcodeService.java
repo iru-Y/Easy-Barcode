@@ -1,6 +1,9 @@
 package com.scanner.barcode_api.services;
 
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import com.scanner.barcode_api.dtos.ScannerFileDto;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -15,13 +18,16 @@ import java.util.stream.Stream;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class BarcodeService {
 
-    private static final String FILE_PATH = "./scanner-files/produtos.csv";
+    private final Cloudinary cloudinary;
+
+    private static final String DIRECTORY = "./scanner-files";
 
     public ScannerFileDto addBarcodes(String filenameWithoutExtension, List<String> barcodes) throws IOException {
         String finalFilename = filenameWithoutExtension + ".csv";
-        Path path = Paths.get("scanner-files", finalFilename);
+        Path path = Paths.get(DIRECTORY, finalFilename);
 
         Files.createDirectories(path.getParent());
         log.debug("📂 Diretório verificado/criado: {}", path.getParent());
@@ -39,7 +45,19 @@ public class BarcodeService {
                 StandardOpenOption.CREATE,
                 StandardOpenOption.APPEND
         );
+
         log.info("📝 {} barcodes adicionados ao arquivo: {}", sanitized.size(), finalFilename);
+
+        Map<?, ?> uploadResult = cloudinary.uploader().upload(path.toFile(), ObjectUtils.asMap(
+                "resource_type", "raw",
+                "folder", "scanner-files"
+        ));
+
+        String cloudinaryUrl = (String) uploadResult.get("secure_url");
+        log.info("☁️ Arquivo '{}' enviado para Cloudinary: {}", finalFilename, cloudinaryUrl);
+
+        Files.delete(path);
+        log.info("🗑️ Arquivo local deletado após upload: {}", path);
 
         FileTime creationTime = (FileTime) Files.getAttribute(path, "creationTime");
         LocalDateTime createdAt = creationTime
@@ -57,7 +75,7 @@ public class BarcodeService {
     }
 
     public List<ScannerFileDto> listScannerFilesWithBarcodes() throws IOException {
-        Path dir = Paths.get("scanner-files");
+        Path dir = Paths.get(DIRECTORY);
 
         if (!Files.exists(dir)) {
             log.warn("⚠️ Pasta de scanner-files não encontrada.");

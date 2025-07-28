@@ -7,3 +7,4 @@ bar_code_mobile_scanner/barcode-scanner/node_modules
 barcode-api/mvnw.cmd
 barcode-api/.idea
 barcode-api/target
+barcode-api/src/main/resources/application.properties
