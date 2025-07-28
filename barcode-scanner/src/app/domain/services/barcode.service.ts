@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { ScannerFileDto } from '../models/scanner-file-dto';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BarcodeService {
-  url: string =  '/barcode';
+  url: string =  `${environment.apiUrl}/barcode` ;
 
   constructor(private http: HttpClient) {}
 
