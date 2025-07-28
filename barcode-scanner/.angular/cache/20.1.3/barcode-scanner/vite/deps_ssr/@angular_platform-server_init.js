@@ -1,7 +1,10 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
-import "./chunk-YHCV7DAQ.js";
+import {
+  init_define_NGX_ENV
+} from "./chunk-X6QDMBHU.js";
 
 // node_modules/@angular/platform-server/fesm2022/init.mjs
+init_define_NGX_ENV();
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;

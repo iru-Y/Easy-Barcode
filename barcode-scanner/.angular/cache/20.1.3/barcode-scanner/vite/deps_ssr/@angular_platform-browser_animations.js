@@ -2,9 +2,9 @@ import { createRequire } from 'module';const require = createRequire(import.meta
 import {
   BrowserModule,
   DomRendererFactory2
-} from "./chunk-FI3N5USH.js";
-import "./chunk-YMTVXAW5.js";
-import "./chunk-CNGBFKFU.js";
+} from "./chunk-ZXJL2XPW.js";
+import "./chunk-L6UWEZQ7.js";
+import "./chunk-6NMUKKMY.js";
 import {
   ANIMATION_MODULE_TYPE,
   DOCUMENT,
@@ -20,14 +20,25 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-XRRJQWZQ.js";
-import "./chunk-6KW2VHMK.js";
+} from "./chunk-LXDBMXWT.js";
+import "./chunk-DLHHKV44.js";
 import {
   __objRest,
-  __spreadValues
-} from "./chunk-YHCV7DAQ.js";
+  __spreadValues,
+  init_define_NGX_ENV
+} from "./chunk-X6QDMBHU.js";
+
+// node_modules/@angular/platform-browser/fesm2022/animations.mjs
+init_define_NGX_ENV();
+
+// node_modules/@angular/animations/fesm2022/browser.mjs
+init_define_NGX_ENV();
+
+// node_modules/@angular/animations/fesm2022/util.mjs
+init_define_NGX_ENV();
 
 // node_modules/@angular/animations/fesm2022/private_export.mjs
+init_define_NGX_ENV();
 var AnimationMetadataType;
 (function(AnimationMetadataType2) {
   AnimationMetadataType2[AnimationMetadataType2["State"] = 0] = "State";

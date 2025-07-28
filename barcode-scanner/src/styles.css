@@ -9,12 +9,14 @@ li, ul {
    list-style-type: none;
 }
 span{
-  font-family: 'Roboto', sans-serif;
+    font-family: 'MontSerrat', sans-serif;
+
   font-weight: 500;
   color: white;
 }
 p{
-  font-family: 'Roboto', sans-serif;
+    font-family: 'MontSerrat', sans-serif;
+
   font-weight: 400;
   color: white;
   font-size: 12px;
@@ -24,8 +26,11 @@ p{
   --header-padding: 0 1.5rem;
   --body-scanner-color: #1F2937;
   --secondary-border:1px solid #a2a7af;
+  --dark-color: #1d1c1c;
 }
 
-
+mat-icon {
+  color: white;
+}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

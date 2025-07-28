@@ -1,12 +1,14 @@
 import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   __commonJS,
-  __require
-} from "./chunk-YHCV7DAQ.js";
+  __require,
+  init_define_NGX_ENV
+} from "./chunk-X6QDMBHU.js";
 
 // node_modules/depd/index.js
 var require_depd = __commonJS({
   "node_modules/depd/index.js"(exports, module) {
+    init_define_NGX_ENV();
     var relative = __require("path").relative;
     module.exports = depd;
     var basePath = process.cwd();
@@ -314,6 +316,7 @@ var require_depd = __commonJS({
 var require_bytes = __commonJS({
   "node_modules/bytes/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = bytes;
     module.exports.format = format;
     module.exports.parse = parse;
@@ -403,6 +406,7 @@ var require_bytes = __commonJS({
 var require_content_type = __commonJS({
   "node_modules/content-type/index.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var PARAM_REGEXP = /; *([!#$%&'*+.^_`|~0-9A-Za-z-]+) *= *("(?:[\u000b\u0020\u0021\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u000b\u0020-\u00ff])*"|[!#$%&'*+.^_`|~0-9A-Za-z-]+) */g;
     var TEXT_REGEXP = /^[\u000b\u0020-\u007e\u0080-\u00ff]+$/;
     var TOKEN_REGEXP = /^[!#$%&'*+.^_`|~0-9A-Za-z-]+$/;
@@ -507,6 +511,7 @@ var require_content_type = __commonJS({
 var require_setprototypeof = __commonJS({
   "node_modules/setprototypeof/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Object.setPrototypeOf || ({ __proto__: [] } instanceof Array ? setProtoOf : mixinProperties);
     function setProtoOf(obj, proto) {
       obj.__proto__ = proto;
@@ -598,6 +603,7 @@ var require_codes = __commonJS({
 var require_statuses = __commonJS({
   "node_modules/statuses/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var codes = require_codes();
     module.exports = status;
     status.message = codes;
@@ -668,6 +674,7 @@ var require_statuses = __commonJS({
 // node_modules/inherits/inherits_browser.js
 var require_inherits_browser = __commonJS({
   "node_modules/inherits/inherits_browser.js"(exports, module) {
+    init_define_NGX_ENV();
     if (typeof Object.create === "function") {
       module.exports = function inherits(ctor, superCtor) {
         if (superCtor) {
@@ -700,6 +707,7 @@ var require_inherits_browser = __commonJS({
 // node_modules/inherits/inherits.js
 var require_inherits = __commonJS({
   "node_modules/inherits/inherits.js"(exports, module) {
+    init_define_NGX_ENV();
     try {
       util = __require("util");
       if (typeof util.inherits !== "function") throw "";
@@ -715,6 +723,7 @@ var require_inherits = __commonJS({
 var require_toidentifier = __commonJS({
   "node_modules/toidentifier/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = toIdentifier;
     function toIdentifier(str) {
       return str.split(" ").map(function(token) {
@@ -728,6 +737,7 @@ var require_toidentifier = __commonJS({
 var require_http_errors = __commonJS({
   "node_modules/http-errors/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var deprecate = require_depd()("http-errors");
     var setPrototypeOf = require_setprototypeof();
     var statuses = require_statuses();
@@ -891,6 +901,7 @@ var require_http_errors = __commonJS({
 // node_modules/body-parser/node_modules/ms/index.js
 var require_ms = __commonJS({
   "node_modules/body-parser/node_modules/ms/index.js"(exports, module) {
+    init_define_NGX_ENV();
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -993,6 +1004,7 @@ var require_ms = __commonJS({
 // node_modules/body-parser/node_modules/debug/src/debug.js
 var require_debug = __commonJS({
   "node_modules/body-parser/node_modules/debug/src/debug.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = createDebug.debug = createDebug["default"] = createDebug;
     exports.coerce = coerce;
     exports.disable = disable;
@@ -1098,6 +1110,7 @@ var require_debug = __commonJS({
 // node_modules/body-parser/node_modules/debug/src/browser.js
 var require_browser = __commonJS({
   "node_modules/body-parser/node_modules/debug/src/browser.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = require_debug();
     exports.log = log;
     exports.formatArgs = formatArgs;
@@ -1184,6 +1197,7 @@ var require_browser = __commonJS({
 // node_modules/body-parser/node_modules/debug/src/node.js
 var require_node = __commonJS({
   "node_modules/body-parser/node_modules/debug/src/node.js"(exports, module) {
+    init_define_NGX_ENV();
     var tty = __require("tty");
     var util = __require("util");
     exports = module.exports = require_debug();
@@ -1304,6 +1318,7 @@ var require_node = __commonJS({
 // node_modules/body-parser/node_modules/debug/src/index.js
 var require_src = __commonJS({
   "node_modules/body-parser/node_modules/debug/src/index.js"(exports, module) {
+    init_define_NGX_ENV();
     if (typeof process !== "undefined" && process.type === "renderer") {
       module.exports = require_browser();
     } else {
@@ -1316,6 +1331,7 @@ var require_src = __commonJS({
 var require_destroy = __commonJS({
   "node_modules/destroy/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var EventEmitter = __require("events").EventEmitter;
     var ReadStream = __require("fs").ReadStream;
     var Stream = __require("stream");
@@ -1403,6 +1419,7 @@ var require_destroy = __commonJS({
 var require_safer = __commonJS({
   "node_modules/safer-buffer/safer.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var buffer = __require("buffer");
     var Buffer2 = buffer.Buffer;
     var safer = {};
@@ -1471,6 +1488,7 @@ var require_safer = __commonJS({
 var require_bom_handling = __commonJS({
   "node_modules/iconv-lite/lib/bom-handling.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var BOMChar = "\uFEFF";
     exports.PrependBOM = PrependBOMWrapper;
     function PrependBOMWrapper(encoder, options) {
@@ -1515,6 +1533,7 @@ var require_bom_handling = __commonJS({
 var require_internal = __commonJS({
   "node_modules/iconv-lite/encodings/internal.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = require_safer().Buffer;
     module.exports = {
       // Encodings
@@ -1659,6 +1678,7 @@ var require_internal = __commonJS({
 var require_utf16 = __commonJS({
   "node_modules/iconv-lite/encodings/utf16.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = require_safer().Buffer;
     exports.utf16be = Utf16BECodec;
     function Utf16BECodec() {
@@ -1775,6 +1795,7 @@ var require_utf16 = __commonJS({
 var require_utf7 = __commonJS({
   "node_modules/iconv-lite/encodings/utf7.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = require_safer().Buffer;
     exports.utf7 = Utf7Codec;
     exports.unicode11utf7 = "utf7";
@@ -1976,6 +1997,7 @@ var require_utf7 = __commonJS({
 var require_sbcs_codec = __commonJS({
   "node_modules/iconv-lite/encodings/sbcs-codec.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = require_safer().Buffer;
     exports._sbcs = SBCSCodec;
     function SBCSCodec(codecOptions, iconv) {
@@ -2032,6 +2054,7 @@ var require_sbcs_codec = __commonJS({
 var require_sbcs_data = __commonJS({
   "node_modules/iconv-lite/encodings/sbcs-data.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = {
       // Not supported by iconv, not sure why.
       "10029": "maccenteuro",
@@ -2181,6 +2204,7 @@ var require_sbcs_data = __commonJS({
 var require_sbcs_data_generated = __commonJS({
   "node_modules/iconv-lite/encodings/sbcs-data-generated.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = {
       "437": "cp437",
       "737": "cp737",
@@ -2636,6 +2660,7 @@ var require_sbcs_data_generated = __commonJS({
 var require_dbcs_codec = __commonJS({
   "node_modules/iconv-lite/encodings/dbcs-codec.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = require_safer().Buffer;
     exports._dbcs = DBCSCodec;
     var UNASSIGNED = -1;
@@ -4264,6 +4289,7 @@ var require_big5_added = __commonJS({
 var require_dbcs_data = __commonJS({
   "node_modules/iconv-lite/encodings/dbcs-data.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = {
       // == Japanese/ShiftJIS ====================================================
       // All japanese encodings are based on JIS X set of standards:
@@ -4439,6 +4465,7 @@ var require_dbcs_data = __commonJS({
 var require_encodings = __commonJS({
   "node_modules/iconv-lite/encodings/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var modules = [
       require_internal(),
       require_utf16(),
@@ -4465,6 +4492,7 @@ var require_encodings = __commonJS({
 var require_streams = __commonJS({
   "node_modules/iconv-lite/lib/streams.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = __require("buffer").Buffer;
     var Transform = __require("stream").Transform;
     module.exports = function(iconv) {
@@ -4566,6 +4594,7 @@ var require_streams = __commonJS({
 var require_extend_node = __commonJS({
   "node_modules/iconv-lite/lib/extend-node.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = __require("buffer").Buffer;
     module.exports = function(iconv) {
       var original = void 0;
@@ -4728,6 +4757,7 @@ var require_extend_node = __commonJS({
 var require_lib = __commonJS({
   "node_modules/iconv-lite/lib/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = require_safer().Buffer;
     var bomHandling = require_bom_handling();
     var iconv = module.exports;
@@ -4831,6 +4861,7 @@ var require_lib = __commonJS({
 var require_unpipe = __commonJS({
   "node_modules/unpipe/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = unpipe;
     function hasPipeDataListeners(stream) {
       var listeners = stream.listeners("data");
@@ -4869,6 +4900,7 @@ var require_unpipe = __commonJS({
 var require_raw_body = __commonJS({
   "node_modules/body-parser/node_modules/raw-body/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var asyncHooks = tryRequireAsyncHooks();
     var bytes = require_bytes();
     var createError = require_http_errors();
@@ -5058,6 +5090,7 @@ var require_raw_body = __commonJS({
 var require_ee_first = __commonJS({
   "node_modules/ee-first/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = first;
     function first(stuff, done) {
       if (!Array.isArray(stuff))
@@ -5114,6 +5147,7 @@ var require_ee_first = __commonJS({
 var require_on_finished = __commonJS({
   "node_modules/on-finished/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = onFinished;
     module.exports.isFinished = isFinished;
     var asyncHooks = tryRequireAsyncHooks();
@@ -5218,6 +5252,7 @@ var require_on_finished = __commonJS({
 var require_read = __commonJS({
   "node_modules/body-parser/lib/read.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var createError = require_http_errors();
     var destroy = require_destroy();
     var getBody = require_raw_body();
@@ -5344,6 +5379,7 @@ var require_read = __commonJS({
 // node_modules/media-typer/index.js
 var require_media_typer = __commonJS({
   "node_modules/media-typer/index.js"(exports) {
+    init_define_NGX_ENV();
     var paramRegExp = /; *([!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+) *= *("(?:[ !\u0023-\u005b\u005d-\u007e\u0080-\u00ff]|\\[\u0020-\u007e])*"|[!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+) */g;
     var textRegExp = /^[\u0020-\u007e\u0080-\u00ff]+$/;
     var tokenRegExp = /^[!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+$/;
@@ -13993,6 +14029,7 @@ var require_db = __commonJS({
 // node_modules/mime-db/index.js
 var require_mime_db = __commonJS({
   "node_modules/mime-db/index.js"(exports, module) {
+    init_define_NGX_ENV();
     module.exports = require_db();
   }
 });
@@ -14001,6 +14038,7 @@ var require_mime_db = __commonJS({
 var require_mime_types = __commonJS({
   "node_modules/mime-types/index.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var db = require_mime_db();
     var extname = __require("path").extname;
     var EXTRACT_TYPE_REGEXP = /^\s*([^;\s]*)(?:;|\s|$)/;
@@ -14091,6 +14129,7 @@ var require_mime_types = __commonJS({
 var require_type_is = __commonJS({
   "node_modules/type-is/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var typer = require_media_typer();
     var mime = require_mime_types();
     module.exports = typeofrequest;
@@ -14196,6 +14235,7 @@ var require_type_is = __commonJS({
 var require_json = __commonJS({
   "node_modules/body-parser/lib/types/json.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var bytes = require_bytes();
     var contentType = require_content_type();
     var createError = require_http_errors();
@@ -14330,6 +14370,7 @@ var require_json = __commonJS({
 var require_raw = __commonJS({
   "node_modules/body-parser/lib/types/raw.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var bytes = require_bytes();
     var debug = require_src()("body-parser:raw");
     var read = require_read();
@@ -14386,6 +14427,7 @@ var require_raw = __commonJS({
 var require_text = __commonJS({
   "node_modules/body-parser/lib/types/text.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var bytes = require_bytes();
     var contentType = require_content_type();
     var debug = require_src()("body-parser:text");
@@ -14452,6 +14494,7 @@ var require_text = __commonJS({
 var require_type = __commonJS({
   "node_modules/es-errors/type.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = TypeError;
   }
 });
@@ -14459,6 +14502,7 @@ var require_type = __commonJS({
 // node_modules/object-inspect/util.inspect.js
 var require_util_inspect = __commonJS({
   "node_modules/object-inspect/util.inspect.js"(exports, module) {
+    init_define_NGX_ENV();
     module.exports = __require("util").inspect;
   }
 });
@@ -14466,6 +14510,7 @@ var require_util_inspect = __commonJS({
 // node_modules/object-inspect/index.js
 var require_object_inspect = __commonJS({
   "node_modules/object-inspect/index.js"(exports, module) {
+    init_define_NGX_ENV();
     var hasMap = typeof Map === "function" && Map.prototype;
     var mapSizeDescriptor = Object.getOwnPropertyDescriptor && hasMap ? Object.getOwnPropertyDescriptor(Map.prototype, "size") : null;
     var mapSize = hasMap && mapSizeDescriptor && typeof mapSizeDescriptor.get === "function" ? mapSizeDescriptor.get : null;
@@ -14998,6 +15043,7 @@ var require_object_inspect = __commonJS({
 var require_side_channel_list = __commonJS({
   "node_modules/side-channel-list/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var inspect = require_object_inspect();
     var $TypeError = require_type();
     var listGetNode = function(list, key, isDelete) {
@@ -15092,6 +15138,7 @@ var require_side_channel_list = __commonJS({
 var require_es_object_atoms = __commonJS({
   "node_modules/es-object-atoms/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Object;
   }
 });
@@ -15100,6 +15147,7 @@ var require_es_object_atoms = __commonJS({
 var require_es_errors = __commonJS({
   "node_modules/es-errors/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Error;
   }
 });
@@ -15108,6 +15156,7 @@ var require_es_errors = __commonJS({
 var require_eval = __commonJS({
   "node_modules/es-errors/eval.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = EvalError;
   }
 });
@@ -15116,6 +15165,7 @@ var require_eval = __commonJS({
 var require_range = __commonJS({
   "node_modules/es-errors/range.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = RangeError;
   }
 });
@@ -15124,6 +15174,7 @@ var require_range = __commonJS({
 var require_ref = __commonJS({
   "node_modules/es-errors/ref.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = ReferenceError;
   }
 });
@@ -15132,6 +15183,7 @@ var require_ref = __commonJS({
 var require_syntax = __commonJS({
   "node_modules/es-errors/syntax.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = SyntaxError;
   }
 });
@@ -15140,6 +15192,7 @@ var require_syntax = __commonJS({
 var require_uri = __commonJS({
   "node_modules/es-errors/uri.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = URIError;
   }
 });
@@ -15148,6 +15201,7 @@ var require_uri = __commonJS({
 var require_abs = __commonJS({
   "node_modules/math-intrinsics/abs.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Math.abs;
   }
 });
@@ -15156,6 +15210,7 @@ var require_abs = __commonJS({
 var require_floor = __commonJS({
   "node_modules/math-intrinsics/floor.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Math.floor;
   }
 });
@@ -15164,6 +15219,7 @@ var require_floor = __commonJS({
 var require_max = __commonJS({
   "node_modules/math-intrinsics/max.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Math.max;
   }
 });
@@ -15172,6 +15228,7 @@ var require_max = __commonJS({
 var require_min = __commonJS({
   "node_modules/math-intrinsics/min.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Math.min;
   }
 });
@@ -15180,6 +15237,7 @@ var require_min = __commonJS({
 var require_pow = __commonJS({
   "node_modules/math-intrinsics/pow.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Math.pow;
   }
 });
@@ -15188,6 +15246,7 @@ var require_pow = __commonJS({
 var require_round = __commonJS({
   "node_modules/math-intrinsics/round.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Math.round;
   }
 });
@@ -15196,6 +15255,7 @@ var require_round = __commonJS({
 var require_isNaN = __commonJS({
   "node_modules/math-intrinsics/isNaN.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Number.isNaN || function isNaN2(a) {
       return a !== a;
     };
@@ -15206,6 +15266,7 @@ var require_isNaN = __commonJS({
 var require_sign = __commonJS({
   "node_modules/math-intrinsics/sign.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var $isNaN = require_isNaN();
     module.exports = function sign(number) {
       if ($isNaN(number) || number === 0) {
@@ -15220,6 +15281,7 @@ var require_sign = __commonJS({
 var require_gOPD = __commonJS({
   "node_modules/gopd/gOPD.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Object.getOwnPropertyDescriptor;
   }
 });
@@ -15228,6 +15290,7 @@ var require_gOPD = __commonJS({
 var require_gopd = __commonJS({
   "node_modules/gopd/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var $gOPD = require_gOPD();
     if ($gOPD) {
       try {
@@ -15244,6 +15307,7 @@ var require_gopd = __commonJS({
 var require_es_define_property = __commonJS({
   "node_modules/es-define-property/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var $defineProperty = Object.defineProperty || false;
     if ($defineProperty) {
       try {
@@ -15260,6 +15324,7 @@ var require_es_define_property = __commonJS({
 var require_shams = __commonJS({
   "node_modules/has-symbols/shams.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = function hasSymbols() {
       if (typeof Symbol !== "function" || typeof Object.getOwnPropertySymbols !== "function") {
         return false;
@@ -15315,6 +15380,7 @@ var require_shams = __commonJS({
 var require_has_symbols = __commonJS({
   "node_modules/has-symbols/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var origSymbol = typeof Symbol !== "undefined" && Symbol;
     var hasSymbolSham = require_shams();
     module.exports = function hasNativeSymbols() {
@@ -15339,6 +15405,7 @@ var require_has_symbols = __commonJS({
 var require_Reflect_getPrototypeOf = __commonJS({
   "node_modules/get-proto/Reflect.getPrototypeOf.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = typeof Reflect !== "undefined" && Reflect.getPrototypeOf || null;
   }
 });
@@ -15347,6 +15414,7 @@ var require_Reflect_getPrototypeOf = __commonJS({
 var require_Object_getPrototypeOf = __commonJS({
   "node_modules/get-proto/Object.getPrototypeOf.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var $Object = require_es_object_atoms();
     module.exports = $Object.getPrototypeOf || null;
   }
@@ -15356,6 +15424,7 @@ var require_Object_getPrototypeOf = __commonJS({
 var require_implementation = __commonJS({
   "node_modules/function-bind/implementation.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var ERROR_MESSAGE = "Function.prototype.bind called on incompatible ";
     var toStr = Object.prototype.toString;
     var max = Math.max;
@@ -15432,6 +15501,7 @@ var require_implementation = __commonJS({
 var require_function_bind = __commonJS({
   "node_modules/function-bind/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var implementation = require_implementation();
     module.exports = Function.prototype.bind || implementation;
   }
@@ -15441,6 +15511,7 @@ var require_function_bind = __commonJS({
 var require_functionCall = __commonJS({
   "node_modules/call-bind-apply-helpers/functionCall.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Function.prototype.call;
   }
 });
@@ -15449,6 +15520,7 @@ var require_functionCall = __commonJS({
 var require_functionApply = __commonJS({
   "node_modules/call-bind-apply-helpers/functionApply.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = Function.prototype.apply;
   }
 });
@@ -15457,6 +15529,7 @@ var require_functionApply = __commonJS({
 var require_reflectApply = __commonJS({
   "node_modules/call-bind-apply-helpers/reflectApply.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = typeof Reflect !== "undefined" && Reflect && Reflect.apply;
   }
 });
@@ -15465,6 +15538,7 @@ var require_reflectApply = __commonJS({
 var require_actualApply = __commonJS({
   "node_modules/call-bind-apply-helpers/actualApply.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var bind = require_function_bind();
     var $apply = require_functionApply();
     var $call = require_functionCall();
@@ -15477,6 +15551,7 @@ var require_actualApply = __commonJS({
 var require_call_bind_apply_helpers = __commonJS({
   "node_modules/call-bind-apply-helpers/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var bind = require_function_bind();
     var $TypeError = require_type();
     var $call = require_functionCall();
@@ -15494,6 +15569,7 @@ var require_call_bind_apply_helpers = __commonJS({
 var require_get = __commonJS({
   "node_modules/dunder-proto/get.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var callBind = require_call_bind_apply_helpers();
     var gOPD = require_gopd();
     var hasProtoAccessor;
@@ -15525,6 +15601,7 @@ var require_get = __commonJS({
 var require_get_proto = __commonJS({
   "node_modules/get-proto/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var reflectGetProto = require_Reflect_getPrototypeOf();
     var originalGetProto = require_Object_getPrototypeOf();
     var getDunderProto = require_get();
@@ -15545,6 +15622,7 @@ var require_get_proto = __commonJS({
 var require_hasown = __commonJS({
   "node_modules/hasown/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var call = Function.prototype.call;
     var $hasOwn = Object.prototype.hasOwnProperty;
     var bind = require_function_bind();
@@ -15556,6 +15634,7 @@ var require_hasown = __commonJS({
 var require_get_intrinsic = __commonJS({
   "node_modules/get-intrinsic/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var undefined2;
     var $Object = require_es_object_atoms();
     var $Error = require_es_errors();
@@ -15887,6 +15966,7 @@ var require_get_intrinsic = __commonJS({
 var require_call_bound = __commonJS({
   "node_modules/call-bound/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var GetIntrinsic = require_get_intrinsic();
     var callBindBasic = require_call_bind_apply_helpers();
     var $indexOf = callBindBasic([GetIntrinsic("%String.prototype.indexOf%")]);
@@ -15910,6 +15990,7 @@ var require_call_bound = __commonJS({
 var require_side_channel_map = __commonJS({
   "node_modules/side-channel-map/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var GetIntrinsic = require_get_intrinsic();
     var callBound = require_call_bound();
     var inspect = require_object_inspect();
@@ -15966,6 +16047,7 @@ var require_side_channel_map = __commonJS({
 var require_side_channel_weakmap = __commonJS({
   "node_modules/side-channel-weakmap/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var GetIntrinsic = require_get_intrinsic();
     var callBound = require_call_bound();
     var inspect = require_object_inspect();
@@ -16039,6 +16121,7 @@ var require_side_channel_weakmap = __commonJS({
 var require_side_channel = __commonJS({
   "node_modules/side-channel/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var $TypeError = require_type();
     var inspect = require_object_inspect();
     var getSideChannelList = require_side_channel_list();
@@ -16078,6 +16161,7 @@ var require_side_channel = __commonJS({
 var require_formats = __commonJS({
   "node_modules/qs/lib/formats.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var replace = String.prototype.replace;
     var percentTwenties = /%20/g;
     var Format = {
@@ -16104,6 +16188,7 @@ var require_formats = __commonJS({
 var require_utils = __commonJS({
   "node_modules/qs/lib/utils.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var formats = require_formats();
     var has = Object.prototype.hasOwnProperty;
     var isArray = Array.isArray;
@@ -16309,6 +16394,7 @@ var require_utils = __commonJS({
 var require_stringify = __commonJS({
   "node_modules/qs/lib/stringify.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var getSideChannel = require_side_channel();
     var utils = require_utils();
     var formats = require_formats();
@@ -16589,6 +16675,7 @@ var require_stringify = __commonJS({
 var require_parse = __commonJS({
   "node_modules/qs/lib/parse.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var utils = require_utils();
     var has = Object.prototype.hasOwnProperty;
     var isArray = Array.isArray;
@@ -16816,6 +16903,7 @@ var require_parse = __commonJS({
 var require_lib2 = __commonJS({
   "node_modules/qs/lib/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var stringify = require_stringify();
     var parse = require_parse();
     var formats = require_formats();
@@ -16831,6 +16919,7 @@ var require_lib2 = __commonJS({
 var require_urlencoded = __commonJS({
   "node_modules/body-parser/lib/types/urlencoded.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var bytes = require_bytes();
     var contentType = require_content_type();
     var createError = require_http_errors();
@@ -17006,6 +17095,7 @@ var require_urlencoded = __commonJS({
 var require_body_parser = __commonJS({
   "node_modules/body-parser/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var deprecate = require_depd()("body-parser");
     var parsers = /* @__PURE__ */ Object.create(null);
     exports = module.exports = deprecate.function(
@@ -17083,6 +17173,7 @@ var require_body_parser = __commonJS({
 var require_merge_descriptors = __commonJS({
   "node_modules/merge-descriptors/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = merge;
     var hasOwnProperty = Object.prototype.hasOwnProperty;
     function merge(dest, src, redefine) {
@@ -17110,6 +17201,7 @@ var require_merge_descriptors = __commonJS({
 // node_modules/finalhandler/node_modules/ms/index.js
 var require_ms2 = __commonJS({
   "node_modules/finalhandler/node_modules/ms/index.js"(exports, module) {
+    init_define_NGX_ENV();
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -17212,6 +17304,7 @@ var require_ms2 = __commonJS({
 // node_modules/finalhandler/node_modules/debug/src/debug.js
 var require_debug2 = __commonJS({
   "node_modules/finalhandler/node_modules/debug/src/debug.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = createDebug.debug = createDebug["default"] = createDebug;
     exports.coerce = coerce;
     exports.disable = disable;
@@ -17317,6 +17410,7 @@ var require_debug2 = __commonJS({
 // node_modules/finalhandler/node_modules/debug/src/browser.js
 var require_browser2 = __commonJS({
   "node_modules/finalhandler/node_modules/debug/src/browser.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = require_debug2();
     exports.log = log;
     exports.formatArgs = formatArgs;
@@ -17403,6 +17497,7 @@ var require_browser2 = __commonJS({
 // node_modules/finalhandler/node_modules/debug/src/node.js
 var require_node2 = __commonJS({
   "node_modules/finalhandler/node_modules/debug/src/node.js"(exports, module) {
+    init_define_NGX_ENV();
     var tty = __require("tty");
     var util = __require("util");
     exports = module.exports = require_debug2();
@@ -17523,6 +17618,7 @@ var require_node2 = __commonJS({
 // node_modules/finalhandler/node_modules/debug/src/index.js
 var require_src2 = __commonJS({
   "node_modules/finalhandler/node_modules/debug/src/index.js"(exports, module) {
+    init_define_NGX_ENV();
     if (typeof process !== "undefined" && process.type === "renderer") {
       module.exports = require_browser2();
     } else {
@@ -17535,6 +17631,7 @@ var require_src2 = __commonJS({
 var require_encodeurl = __commonJS({
   "node_modules/encodeurl/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = encodeUrl;
     var ENCODE_CHARS_REGEXP = /(?:[^\x21\x23-\x3B\x3D\x3F-\x5F\x61-\x7A\x7C\x7E]|%(?:[^0-9A-Fa-f]|[0-9A-Fa-f][^0-9A-Fa-f]|$))+/g;
     var UNMATCHED_SURROGATE_PAIR_REGEXP = /(^|[^\uD800-\uDBFF])[\uDC00-\uDFFF]|[\uD800-\uDBFF]([^\uDC00-\uDFFF]|$)/g;
@@ -17549,6 +17646,7 @@ var require_encodeurl = __commonJS({
 var require_escape_html = __commonJS({
   "node_modules/escape-html/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var matchHtmlRegExp = /["'&<>]/;
     module.exports = escapeHtml;
     function escapeHtml(string) {
@@ -17596,6 +17694,7 @@ var require_escape_html = __commonJS({
 var require_parseurl = __commonJS({
   "node_modules/parseurl/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var url = __require("url");
     var parse = url.parse;
     var Url = url.Url;
@@ -17680,6 +17779,7 @@ var require_parseurl = __commonJS({
 var require_finalhandler = __commonJS({
   "node_modules/finalhandler/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var debug = require_src2()("finalhandler");
     var encodeUrl = require_encodeurl();
     var escapeHtml = require_escape_html();
@@ -17829,6 +17929,7 @@ var require_finalhandler = __commonJS({
 // node_modules/express/node_modules/ms/index.js
 var require_ms3 = __commonJS({
   "node_modules/express/node_modules/ms/index.js"(exports, module) {
+    init_define_NGX_ENV();
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -17931,6 +18032,7 @@ var require_ms3 = __commonJS({
 // node_modules/express/node_modules/debug/src/debug.js
 var require_debug3 = __commonJS({
   "node_modules/express/node_modules/debug/src/debug.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = createDebug.debug = createDebug["default"] = createDebug;
     exports.coerce = coerce;
     exports.disable = disable;
@@ -18036,6 +18138,7 @@ var require_debug3 = __commonJS({
 // node_modules/express/node_modules/debug/src/browser.js
 var require_browser3 = __commonJS({
   "node_modules/express/node_modules/debug/src/browser.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = require_debug3();
     exports.log = log;
     exports.formatArgs = formatArgs;
@@ -18122,6 +18225,7 @@ var require_browser3 = __commonJS({
 // node_modules/express/node_modules/debug/src/node.js
 var require_node3 = __commonJS({
   "node_modules/express/node_modules/debug/src/node.js"(exports, module) {
+    init_define_NGX_ENV();
     var tty = __require("tty");
     var util = __require("util");
     exports = module.exports = require_debug3();
@@ -18242,6 +18346,7 @@ var require_node3 = __commonJS({
 // node_modules/express/node_modules/debug/src/index.js
 var require_src3 = __commonJS({
   "node_modules/express/node_modules/debug/src/index.js"(exports, module) {
+    init_define_NGX_ENV();
     if (typeof process !== "undefined" && process.type === "renderer") {
       module.exports = require_browser3();
     } else {
@@ -18254,6 +18359,7 @@ var require_src3 = __commonJS({
 var require_array_flatten = __commonJS({
   "node_modules/array-flatten/array-flatten.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = arrayFlatten;
     function flattenWithDepth(array, result, depth) {
       for (var i = 0; i < array.length; i++) {
@@ -18289,6 +18395,7 @@ var require_array_flatten = __commonJS({
 // node_modules/path-to-regexp/index.js
 var require_path_to_regexp = __commonJS({
   "node_modules/path-to-regexp/index.js"(exports, module) {
+    init_define_NGX_ENV();
     module.exports = pathToRegexp;
     var MATCHING_GROUP_REGEXP = /\\.|\((?:\?<(.*?)>)?(?!\?)/g;
     function pathToRegexp(path, keys, options) {
@@ -18397,6 +18504,7 @@ var require_path_to_regexp = __commonJS({
 var require_layer = __commonJS({
   "node_modules/express/lib/router/layer.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var pathRegexp = require_path_to_regexp();
     var debug = require_src3()("express:router:layer");
     var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -18492,6 +18600,7 @@ var require_layer = __commonJS({
 var require_methods = __commonJS({
   "node_modules/methods/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var http = __require("http");
     module.exports = getCurrentNodeMethods() || getBasicNodeMethods();
     function getCurrentNodeMethods() {
@@ -18536,6 +18645,7 @@ var require_methods = __commonJS({
 var require_route = __commonJS({
   "node_modules/express/lib/router/route.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var debug = require_src3()("express:router:route");
     var flatten = require_array_flatten();
     var Layer = require_layer();
@@ -18647,6 +18757,7 @@ var require_route = __commonJS({
 // node_modules/utils-merge/index.js
 var require_utils_merge = __commonJS({
   "node_modules/utils-merge/index.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = function(a, b) {
       if (a && b) {
         for (var key in b) {
@@ -18662,6 +18773,7 @@ var require_utils_merge = __commonJS({
 var require_router = __commonJS({
   "node_modules/express/lib/router/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var Route = require_route();
     var Layer = require_layer();
     var methods = require_methods();
@@ -19045,6 +19157,7 @@ var require_router = __commonJS({
 var require_init = __commonJS({
   "node_modules/express/lib/middleware/init.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var setPrototypeOf = require_setprototypeof();
     exports.init = function(app) {
       return function expressInit(req, res, next) {
@@ -19065,6 +19178,7 @@ var require_init = __commonJS({
 var require_query = __commonJS({
   "node_modules/express/lib/middleware/query.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var merge = require_utils_merge();
     var parseUrl = require_parseurl();
     var qs = require_lib2();
@@ -19093,6 +19207,7 @@ var require_query = __commonJS({
 var require_view = __commonJS({
   "node_modules/express/lib/view.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var debug = require_src3()("express:view");
     var path = __require("path");
     var fs = __require("fs");
@@ -19172,6 +19287,7 @@ var require_view = __commonJS({
 // node_modules/safe-buffer/index.js
 var require_safe_buffer = __commonJS({
   "node_modules/safe-buffer/index.js"(exports, module) {
+    init_define_NGX_ENV();
     var buffer = __require("buffer");
     var Buffer2 = buffer.Buffer;
     function copyProps(src, dst) {
@@ -19231,6 +19347,7 @@ var require_safe_buffer = __commonJS({
 var require_content_disposition = __commonJS({
   "node_modules/content-disposition/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = contentDisposition;
     module.exports.parse = parse;
     var basename = __require("path").basename;
@@ -19393,6 +19510,7 @@ var require_content_disposition = __commonJS({
 // node_modules/send/node_modules/debug/node_modules/ms/index.js
 var require_ms4 = __commonJS({
   "node_modules/send/node_modules/debug/node_modules/ms/index.js"(exports, module) {
+    init_define_NGX_ENV();
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -19495,6 +19613,7 @@ var require_ms4 = __commonJS({
 // node_modules/send/node_modules/debug/src/debug.js
 var require_debug4 = __commonJS({
   "node_modules/send/node_modules/debug/src/debug.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = createDebug.debug = createDebug["default"] = createDebug;
     exports.coerce = coerce;
     exports.disable = disable;
@@ -19600,6 +19719,7 @@ var require_debug4 = __commonJS({
 // node_modules/send/node_modules/debug/src/browser.js
 var require_browser4 = __commonJS({
   "node_modules/send/node_modules/debug/src/browser.js"(exports, module) {
+    init_define_NGX_ENV();
     exports = module.exports = require_debug4();
     exports.log = log;
     exports.formatArgs = formatArgs;
@@ -19686,6 +19806,7 @@ var require_browser4 = __commonJS({
 // node_modules/send/node_modules/debug/src/node.js
 var require_node4 = __commonJS({
   "node_modules/send/node_modules/debug/src/node.js"(exports, module) {
+    init_define_NGX_ENV();
     var tty = __require("tty");
     var util = __require("util");
     exports = module.exports = require_debug4();
@@ -19806,6 +19927,7 @@ var require_node4 = __commonJS({
 // node_modules/send/node_modules/debug/src/index.js
 var require_src4 = __commonJS({
   "node_modules/send/node_modules/debug/src/index.js"(exports, module) {
+    init_define_NGX_ENV();
     if (typeof process !== "undefined" && process.type === "renderer") {
       module.exports = require_browser4();
     } else {
@@ -19818,6 +19940,7 @@ var require_src4 = __commonJS({
 var require_encodeurl2 = __commonJS({
   "node_modules/send/node_modules/encodeurl/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = encodeUrl;
     var ENCODE_CHARS_REGEXP = /(?:[^\x21\x25\x26-\x3B\x3D\x3F-\x5B\x5D\x5F\x61-\x7A\x7E]|%(?:[^0-9A-Fa-f]|[0-9A-Fa-f][^0-9A-Fa-f]|$))+/g;
     var UNMATCHED_SURROGATE_PAIR_REGEXP = /(^|[^\uD800-\uDBFF])[\uDC00-\uDFFF]|[\uD800-\uDBFF]([^\uDC00-\uDFFF]|$)/g;
@@ -19832,6 +19955,7 @@ var require_encodeurl2 = __commonJS({
 var require_etag = __commonJS({
   "node_modules/etag/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = etag;
     var crypto = __require("crypto");
     var Stats = __require("fs").Stats;
@@ -19874,6 +19998,7 @@ var require_etag = __commonJS({
 var require_fresh = __commonJS({
   "node_modules/fresh/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var CACHE_CONTROL_NO_CACHE_REGEXP = /(?:^|,)\s*?no-cache\s*?(?:,|$)/;
     module.exports = fresh;
     function fresh(reqHeaders, resHeaders) {
@@ -19953,6 +20078,7 @@ var require_types = __commonJS({
 // node_modules/send/node_modules/mime/mime.js
 var require_mime = __commonJS({
   "node_modules/send/node_modules/mime/mime.js"(exports, module) {
+    init_define_NGX_ENV();
     var path = __require("path");
     var fs = __require("fs");
     function Mime() {
@@ -20007,6 +20133,7 @@ var require_mime = __commonJS({
 // node_modules/ms/index.js
 var require_ms5 = __commonJS({
   "node_modules/ms/index.js"(exports, module) {
+    init_define_NGX_ENV();
     var s = 1e3;
     var m = s * 60;
     var h = m * 60;
@@ -20124,6 +20251,7 @@ var require_ms5 = __commonJS({
 var require_range_parser = __commonJS({
   "node_modules/range-parser/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = rangeParser;
     function rangeParser(size, str, options) {
       if (typeof str !== "string") {
@@ -20205,6 +20333,7 @@ var require_range_parser = __commonJS({
 var require_send = __commonJS({
   "node_modules/send/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var createError = require_http_errors();
     var debug = require_src4()("send");
     var deprecate = require_depd()("send");
@@ -20750,6 +20879,7 @@ var require_send = __commonJS({
 var require_forwarded = __commonJS({
   "node_modules/forwarded/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = forwarded;
     function forwarded(req) {
       if (!req) {
@@ -20796,6 +20926,7 @@ var require_forwarded = __commonJS({
 // node_modules/ipaddr.js/lib/ipaddr.js
 var require_ipaddr = __commonJS({
   "node_modules/ipaddr.js/lib/ipaddr.js"(exports, module) {
+    init_define_NGX_ENV();
     (function() {
       var expandIPv6, ipaddr, ipv4Part, ipv4Regexes, ipv6Part, ipv6Regexes, matchCIDR, root, zoneIndex;
       ipaddr = {};
@@ -21419,6 +21550,7 @@ var require_ipaddr = __commonJS({
 var require_proxy_addr = __commonJS({
   "node_modules/proxy-addr/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = proxyaddr;
     module.exports.all = alladdrs;
     module.exports.compile = compile;
@@ -21578,6 +21710,7 @@ var require_proxy_addr = __commonJS({
 var require_utils2 = __commonJS({
   "node_modules/express/lib/utils.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = require_safe_buffer().Buffer;
     var contentDisposition = require_content_disposition();
     var contentType = require_content_type();
@@ -21715,6 +21848,7 @@ var require_utils2 = __commonJS({
 var require_application = __commonJS({
   "node_modules/express/lib/application.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var finalhandler = require_finalhandler();
     var Router = require_router();
     var methods = require_methods();
@@ -21991,6 +22125,7 @@ var require_application = __commonJS({
 var require_charset = __commonJS({
   "node_modules/negotiator/lib/charset.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = preferredCharsets;
     module.exports.preferredCharsets = preferredCharsets;
     var simpleCharsetRegExp = /^\s*([^\s;]+)\s*(?:;(.*))?$/;
@@ -22078,6 +22213,7 @@ var require_charset = __commonJS({
 var require_encoding = __commonJS({
   "node_modules/negotiator/lib/encoding.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = preferredEncodings;
     module.exports.preferredEncodings = preferredEncodings;
     var simpleEncodingRegExp = /^\s*([^\s;]+)\s*(?:;(.*))?$/;
@@ -22176,6 +22312,7 @@ var require_encoding = __commonJS({
 var require_language = __commonJS({
   "node_modules/negotiator/lib/language.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = preferredLanguages;
     module.exports.preferredLanguages = preferredLanguages;
     var simpleLanguageRegExp = /^\s*([^\s\-;]+)(?:-([^\s;]+))?\s*(?:;(.*))?$/;
@@ -22271,6 +22408,7 @@ var require_language = __commonJS({
 var require_mediaType = __commonJS({
   "node_modules/negotiator/lib/mediaType.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = preferredMediaTypes;
     module.exports.preferredMediaTypes = preferredMediaTypes;
     var simpleMediaTypeRegExp = /^\s*([^\s\/;]+)\/([^;\s]+)\s*(?:;(.*))?$/;
@@ -22433,6 +22571,7 @@ var require_mediaType = __commonJS({
 var require_negotiator = __commonJS({
   "node_modules/negotiator/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var preferredCharsets = require_charset();
     var preferredEncodings = require_encoding();
     var preferredLanguages = require_language();
@@ -22488,6 +22627,7 @@ var require_negotiator = __commonJS({
 var require_accepts = __commonJS({
   "node_modules/accepts/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var Negotiator = require_negotiator();
     var mime = require_mime_types();
     module.exports = Accepts;
@@ -22569,6 +22709,7 @@ var require_accepts = __commonJS({
 var require_request = __commonJS({
   "node_modules/express/lib/request.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var accepts = require_accepts();
     var deprecate = require_depd()("express");
     var isIP = __require("net").isIP;
@@ -22732,6 +22873,7 @@ var require_request = __commonJS({
 // node_modules/cookie-signature/index.js
 var require_cookie_signature = __commonJS({
   "node_modules/cookie-signature/index.js"(exports) {
+    init_define_NGX_ENV();
     var crypto = __require("crypto");
     exports.sign = function(val, secret) {
       if ("string" != typeof val) throw new TypeError("Cookie value must be provided as a string.");
@@ -22754,6 +22896,7 @@ var require_cookie_signature = __commonJS({
 var require_cookie = __commonJS({
   "node_modules/cookie/index.js"(exports) {
     "use strict";
+    init_define_NGX_ENV();
     exports.parse = parse;
     exports.serialize = serialize;
     var __toString = Object.prototype.toString;
@@ -22919,6 +23062,7 @@ var require_cookie = __commonJS({
 var require_vary = __commonJS({
   "node_modules/vary/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     module.exports = vary;
     module.exports.append = append;
     var FIELD_NAME_REGEXP = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;
@@ -22992,6 +23136,7 @@ var require_vary = __commonJS({
 var require_response = __commonJS({
   "node_modules/express/lib/response.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var Buffer2 = require_safe_buffer().Buffer;
     var contentDisposition = require_content_disposition();
     var createError = require_http_errors();
@@ -23534,6 +23679,7 @@ var require_response = __commonJS({
 var require_serve_static = __commonJS({
   "node_modules/serve-static/index.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var encodeUrl = require_encodeurl();
     var escapeHtml = require_escape_html();
     var parseUrl = require_parseurl();
@@ -23639,6 +23785,7 @@ var require_serve_static = __commonJS({
 var require_express = __commonJS({
   "node_modules/express/lib/express.js"(exports, module) {
     "use strict";
+    init_define_NGX_ENV();
     var bodyParser = require_body_parser();
     var EventEmitter = __require("events").EventEmitter;
     var mixin = require_merge_descriptors();
@@ -23707,6 +23854,7 @@ var require_express = __commonJS({
 // node_modules/express/index.js
 var require_express2 = __commonJS({
   "node_modules/express/index.js"(exports, module) {
+    init_define_NGX_ENV();
     module.exports = require_express();
   }
 });

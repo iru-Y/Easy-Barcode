@@ -4,15 +4,17 @@ import {
   _RecycleViewRepeaterStrategy,
   _VIEW_REPEATER_STRATEGY,
   isDataSource
-} from "./chunk-BIE6XELX.js";
+} from "./chunk-ZI2U5FDE.js";
+import {
+  _animationsDisabled,
+  coerceCssPixelValue
+} from "./chunk-BWV2ZJ3E.js";
 import {
   RtlScrollAxisType,
-  _animationsDisabled,
   _isTestEnvironment,
-  coerceCssPixelValue,
   getRtlScrollAxisType,
   supportsScrollBehavior
-} from "./chunk-2ECJIMKL.js";
+} from "./chunk-P2WL4VZZ.js";
 import {
   A11yModule,
   ESCAPE,
@@ -25,21 +27,21 @@ import {
   _getFocusedElementPierceShadowDom,
   coerceArray,
   hasModifierKey
-} from "./chunk-BF62WZXZ.js";
+} from "./chunk-RQWU7MO2.js";
 import {
   BidiModule,
   Directionality
-} from "./chunk-5GWKX2AK.js";
+} from "./chunk-J77QF6LW.js";
 import {
   Platform,
   _CdkPrivateStyleLoader,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-VW4CMSDJ.js";
+} from "./chunk-ZJKEFE6P.js";
 import {
   Location
-} from "./chunk-YMTVXAW5.js";
-import "./chunk-CNGBFKFU.js";
+} from "./chunk-L6UWEZQ7.js";
+import "./chunk-6NMUKKMY.js";
 import {
   ANIMATION_MODULE_TYPE,
   ApplicationRef,
@@ -106,20 +108,29 @@ import {
   ɵɵstyleProp,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-XRRJQWZQ.js";
+} from "./chunk-LXDBMXWT.js";
 import {
   require_cjs
-} from "./chunk-6KW2VHMK.js";
+} from "./chunk-DLHHKV44.js";
 import {
   __spreadProps,
   __spreadValues,
-  __toESM
-} from "./chunk-YHCV7DAQ.js";
+  __toESM,
+  init_define_NGX_ENV
+} from "./chunk-X6QDMBHU.js";
+
+// node_modules/@angular/material/fesm2022/dialog.mjs
+init_define_NGX_ENV();
+
+// node_modules/@angular/material/fesm2022/module-Cz4ZB2Wr.mjs
+init_define_NGX_ENV();
 
 // node_modules/@angular/cdk/fesm2022/dialog.mjs
+init_define_NGX_ENV();
 var import_rxjs3 = __toESM(require_cjs(), 1);
 
 // node_modules/@angular/cdk/fesm2022/portal.mjs
+init_define_NGX_ENV();
 function throwNullPortalError() {
   throw Error("Must provide a portal to attach");
 }
@@ -675,9 +686,11 @@ var PortalModule = class _PortalModule {
 var import_operators3 = __toESM(require_operators(), 1);
 
 // node_modules/@angular/cdk/fesm2022/overlay-module-Bd2UplUU.mjs
+init_define_NGX_ENV();
 var import_rxjs2 = __toESM(require_cjs(), 1);
 
 // node_modules/@angular/cdk/fesm2022/scrolling.mjs
+init_define_NGX_ENV();
 var import_rxjs = __toESM(require_cjs(), 1);
 var import_operators = __toESM(require_operators(), 1);
 var _c0 = ["contentWrapper"];
@@ -5745,6 +5758,7 @@ var DialogModule = class _DialogModule {
 })();
 
 // node_modules/@angular/cdk/fesm2022/overlay.mjs
+init_define_NGX_ENV();
 var import_rxjs4 = __toESM(require_cjs(), 1);
 var import_operators4 = __toESM(require_operators(), 1);
 var FullscreenOverlayContainer = class _FullscreenOverlayContainer extends OverlayContainer {

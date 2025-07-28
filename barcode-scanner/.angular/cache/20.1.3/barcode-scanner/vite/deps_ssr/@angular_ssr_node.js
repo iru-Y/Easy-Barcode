@@ -5,21 +5,23 @@ import {
   SERVER_CONTEXT,
   renderApplication,
   renderModule
-} from "./chunk-MSRNAQYN.js";
-import "./chunk-ZPUAIR24.js";
-import "./chunk-U2YF4JJM.js";
-import "./chunk-FI3N5USH.js";
-import "./chunk-RGMI4SY3.js";
-import "./chunk-YMTVXAW5.js";
-import "./chunk-CNGBFKFU.js";
-import "./chunk-XRRJQWZQ.js";
-import "./chunk-6KW2VHMK.js";
+} from "./chunk-YOFB37XI.js";
+import "./chunk-5LPZKCLU.js";
+import "./chunk-UQANP2D7.js";
+import "./chunk-ZXJL2XPW.js";
+import "./chunk-IMVWSZVS.js";
+import "./chunk-L6UWEZQ7.js";
+import "./chunk-6NMUKKMY.js";
+import "./chunk-LXDBMXWT.js";
+import "./chunk-DLHHKV44.js";
 import {
   __async,
-  __spreadValues
-} from "./chunk-YHCV7DAQ.js";
+  __spreadValues,
+  init_define_NGX_ENV
+} from "./chunk-X6QDMBHU.js";
 
 // node_modules/@angular/ssr/fesm2022/node.mjs
+init_define_NGX_ENV();
 import * as fs from "fs";
 import { dirname, join, normalize, resolve } from "path";
 import { URL as URL$1, fileURLToPath } from "url";

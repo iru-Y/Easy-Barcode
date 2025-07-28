@@ -2,10 +2,12 @@ import { createRequire } from 'module';const require = createRequire(import.meta
 import {
   __require,
   __spreadProps,
-  __spreadValues
-} from "./chunk-YHCV7DAQ.js";
+  __spreadValues,
+  init_define_NGX_ENV
+} from "./chunk-X6QDMBHU.js";
 
 // node_modules/zone.js/fesm2015/zone-node.js
+init_define_NGX_ENV();
 var global = globalThis;
 function __symbol__(name) {
   const symbolPrefix = global["__Zone_symbol_prefix"] || "__zone_symbol__";
