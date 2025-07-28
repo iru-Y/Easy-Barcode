@@ -3,7 +3,7 @@ import {
   init_define_NGX_ENV
 } from "./chunk-X6QDMBHU.js";
 
-// node_modules/@angular/platform-server/fesm2022/init.mjs
+// ../node_modules/@angular/platform-server/fesm2022/init.mjs
 init_define_NGX_ENV();
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __commonJS = (cb, mod) => function __require() {
