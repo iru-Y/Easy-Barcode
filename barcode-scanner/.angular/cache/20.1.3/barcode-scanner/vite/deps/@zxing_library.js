@@ -1,6 +1,27 @@
-import "./chunk-GDDPKLXH.js";
+import {
+  init_define_NGX_ENV
+} from "./chunk-TG4IPNUP.js";
+
+// node_modules/@zxing/library/esm/index.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/browser.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/browser/BrowserAztecCodeReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/browser/BrowserCodeReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/ArgumentException.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/Exception.js
+init_define_NGX_ENV();
 
 // node_modules/ts-custom-error/dist/custom-error.mjs
+init_define_NGX_ENV();
 function fixProto(target, prototype) {
   var setPrototypeOf = Object.setPrototypeOf;
   setPrototypeOf ? setPrototypeOf(target, prototype) : target.__proto__ = prototype;
@@ -122,7 +143,11 @@ var ArgumentException = (
 );
 var ArgumentException_default = ArgumentException;
 
+// node_modules/@zxing/library/esm/core/BinaryBitmap.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/IllegalArgumentException.js
+init_define_NGX_ENV();
 var __extends4 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -209,6 +234,7 @@ var BinaryBitmap = (
 var BinaryBitmap_default = BinaryBitmap;
 
 // node_modules/@zxing/library/esm/core/ChecksumException.js
+init_define_NGX_ENV();
 var __extends5 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -242,7 +268,14 @@ var ChecksumException = (
 );
 var ChecksumException_default = ChecksumException;
 
+// node_modules/@zxing/library/esm/core/common/HybridBinarizer.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/common/GlobalHistogramBinarizer.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/Binarizer.js
+init_define_NGX_ENV();
 var Binarizer = (
   /** @class */
   function() {
@@ -263,7 +296,14 @@ var Binarizer = (
 );
 var Binarizer_default = Binarizer;
 
+// node_modules/@zxing/library/esm/core/common/BitArray.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/util/Arrays.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/util/System.js
+init_define_NGX_ENV();
 var System = (
   /** @class */
   function() {
@@ -282,7 +322,11 @@ var System = (
 );
 var System_default = System;
 
+// node_modules/@zxing/library/esm/core/ArrayIndexOutOfBoundsException.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/IndexOutOfBoundsException.js
+init_define_NGX_ENV();
 var __extends6 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -504,6 +548,7 @@ var Arrays = (
 var Arrays_default = Arrays;
 
 // node_modules/@zxing/library/esm/core/util/Integer.js
+init_define_NGX_ENV();
 var Integer = (
   /** @class */
   function() {
@@ -830,7 +875,17 @@ var BitArray = (
 );
 var BitArray_default = BitArray;
 
+// node_modules/@zxing/library/esm/core/common/BitMatrix.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/util/StringBuilder.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/common/StringUtils.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/DecodeHintType.js
+init_define_NGX_ENV();
 var DecodeHintType;
 (function(DecodeHintType2) {
   DecodeHintType2[DecodeHintType2["OTHER"] = 0] = "OTHER";
@@ -848,7 +903,11 @@ var DecodeHintType;
 })(DecodeHintType || (DecodeHintType = {}));
 var DecodeHintType_default = DecodeHintType;
 
+// node_modules/@zxing/library/esm/core/common/CharacterSetECI.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/FormatException.js
+init_define_NGX_ENV();
 var __extends8 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -1031,7 +1090,11 @@ var CharacterSetECI = (
 );
 var CharacterSetECI_default = CharacterSetECI;
 
+// node_modules/@zxing/library/esm/core/util/StringEncoding.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/UnsupportedOperationException.js
+init_define_NGX_ENV();
 var __extends9 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -1718,6 +1781,7 @@ var BitMatrix = (
 var BitMatrix_default = BitMatrix;
 
 // node_modules/@zxing/library/esm/core/NotFoundException.js
+init_define_NGX_ENV();
 var __extends10 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -2063,7 +2127,14 @@ var HybridBinarizer = (
 );
 var HybridBinarizer_default = HybridBinarizer;
 
+// node_modules/@zxing/library/esm/browser/HTMLCanvasElementLuminanceSource.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/InvertedLuminanceSource.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/LuminanceSource.js
+init_define_NGX_ENV();
 var LuminanceSource = (
   /** @class */
   function() {
@@ -2337,6 +2408,7 @@ var HTMLCanvasElementLuminanceSource = (
 );
 
 // node_modules/@zxing/library/esm/browser/VideoInputDevice.js
+init_define_NGX_ENV();
 var VideoInputDevice = (
   /** @class */
   function() {
@@ -3240,7 +3312,11 @@ var BrowserCodeReader = (
   }()
 );
 
+// node_modules/@zxing/library/esm/core/aztec/AztecReader.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/Result.js
+init_define_NGX_ENV();
 var Result = (
   /** @class */
   function() {
@@ -3329,6 +3405,7 @@ var Result = (
 var Result_default = Result;
 
 // node_modules/@zxing/library/esm/core/BarcodeFormat.js
+init_define_NGX_ENV();
 var BarcodeFormat;
 (function(BarcodeFormat2) {
   BarcodeFormat2[BarcodeFormat2["AZTEC"] = 0] = "AZTEC";
@@ -3352,6 +3429,7 @@ var BarcodeFormat;
 var BarcodeFormat_default = BarcodeFormat;
 
 // node_modules/@zxing/library/esm/core/ResultMetadataType.js
+init_define_NGX_ENV();
 var ResultMetadataType;
 (function(ResultMetadataType2) {
   ResultMetadataType2[ResultMetadataType2["OTHER"] = 0] = "OTHER";
@@ -3368,7 +3446,11 @@ var ResultMetadataType;
 })(ResultMetadataType || (ResultMetadataType = {}));
 var ResultMetadataType_default = ResultMetadataType;
 
+// node_modules/@zxing/library/esm/core/aztec/decoder/Decoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/common/DecoderResult.js
+init_define_NGX_ENV();
 var DecoderResult = (
   /** @class */
   function() {
@@ -3437,7 +3519,14 @@ var DecoderResult = (
 );
 var DecoderResult_default = DecoderResult;
 
+// node_modules/@zxing/library/esm/core/common/reedsolomon/GenericGF.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/common/reedsolomon/GenericGFPoly.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/common/reedsolomon/AbstractGenericGF.js
+init_define_NGX_ENV();
 var AbstractGenericGF = (
   /** @class */
   function() {
@@ -3661,6 +3750,7 @@ var GenericGFPoly = (
 var GenericGFPoly_default = GenericGFPoly;
 
 // node_modules/@zxing/library/esm/core/ArithmeticException.js
+init_define_NGX_ENV();
 var __extends15 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -3792,7 +3882,11 @@ var GenericGF = (
 );
 var GenericGF_default = GenericGF;
 
+// node_modules/@zxing/library/esm/core/common/reedsolomon/ReedSolomonDecoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/ReedSolomonException.js
+init_define_NGX_ENV();
 var __extends17 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -3824,6 +3918,7 @@ var ReedSolomonException = (
 var ReedSolomonException_default = ReedSolomonException;
 
 // node_modules/@zxing/library/esm/core/IllegalStateException.js
+init_define_NGX_ENV();
 var __extends18 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -4373,7 +4468,14 @@ var Decoder = (
 );
 var Decoder_default = Decoder;
 
+// node_modules/@zxing/library/esm/core/aztec/detector/Detector.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/ResultPoint.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/common/detector/MathUtils.js
+init_define_NGX_ENV();
 var MathUtils = (
   /** @class */
   function() {
@@ -4413,6 +4515,7 @@ var MathUtils = (
 var MathUtils_default = MathUtils;
 
 // node_modules/@zxing/library/esm/core/util/Float.js
+init_define_NGX_ENV();
 var Float = (
   /** @class */
   function() {
@@ -4496,7 +4599,11 @@ var ResultPoint = (
 );
 var ResultPoint_default = ResultPoint;
 
+// node_modules/@zxing/library/esm/core/aztec/AztecDetectorResult.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/common/DetectorResult.js
+init_define_NGX_ENV();
 var DetectorResult = (
   /** @class */
   function() {
@@ -4559,6 +4666,7 @@ var AztecDetectorResult = (
 var AztecDetectorResult_default = AztecDetectorResult;
 
 // node_modules/@zxing/library/esm/core/common/detector/WhiteRectangleDetector.js
+init_define_NGX_ENV();
 var WhiteRectangleDetector = (
   /** @class */
   function() {
@@ -4763,7 +4871,14 @@ var WhiteRectangleDetector = (
 );
 var WhiteRectangleDetector_default = WhiteRectangleDetector;
 
+// node_modules/@zxing/library/esm/core/common/GridSamplerInstance.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/common/DefaultGridSampler.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/common/GridSampler.js
+init_define_NGX_ENV();
 var GridSampler = (
   /** @class */
   function() {
@@ -4825,6 +4940,7 @@ var GridSampler = (
 var GridSampler_default = GridSampler;
 
 // node_modules/@zxing/library/esm/core/common/PerspectiveTransform.js
+init_define_NGX_ENV();
 var PerspectiveTransform = (
   /** @class */
   function() {
@@ -5435,7 +5551,17 @@ var BrowserAztecCodeReader = (
   }(BrowserCodeReader)
 );
 
+// node_modules/@zxing/library/esm/browser/BrowserBarcodeReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/oned/MultiFormatOneDReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/oned/Code128Reader.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/oned/OneDReader.js
+init_define_NGX_ENV();
 var OneDReader = (
   /** @class */
   function() {
@@ -6050,6 +6176,7 @@ var Code128Reader = (
 var Code128Reader_default = Code128Reader;
 
 // node_modules/@zxing/library/esm/core/oned/Code39Reader.js
+init_define_NGX_ENV();
 var __extends23 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -6381,6 +6508,7 @@ var Code39Reader = (
 var Code39Reader_default = Code39Reader;
 
 // node_modules/@zxing/library/esm/core/oned/Code93Reader.js
+init_define_NGX_ENV();
 var __extends24 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -6697,6 +6825,7 @@ var Code93Reader = (
 var Code93Reader_default = Code93Reader;
 
 // node_modules/@zxing/library/esm/core/oned/ITFReader.js
+init_define_NGX_ENV();
 var __extends25 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -6948,7 +7077,20 @@ var ITFReader = (
 );
 var ITFReader_default = ITFReader;
 
+// node_modules/@zxing/library/esm/core/oned/MultiFormatUPCEANReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/oned/EAN13Reader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/oned/UPCEANReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/oned/UPCEANExtensionSupport.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/oned/AbstractUPCEANReader.js
+init_define_NGX_ENV();
 var __extends26 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -7102,6 +7244,7 @@ var AbstractUPCEANReader = (
 var AbstractUPCEANReader_default = AbstractUPCEANReader;
 
 // node_modules/@zxing/library/esm/core/oned/UPCEANExtension5Support.js
+init_define_NGX_ENV();
 var __values7 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -7247,6 +7390,7 @@ var UPCEANExtension5Support = (
 var UPCEANExtension5Support_default = UPCEANExtension5Support;
 
 // node_modules/@zxing/library/esm/core/oned/UPCEANExtension2Support.js
+init_define_NGX_ENV();
 var __values8 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -7605,6 +7749,7 @@ var EAN13Reader = (
 var EAN13Reader_default = EAN13Reader;
 
 // node_modules/@zxing/library/esm/core/oned/EAN8Reader.js
+init_define_NGX_ENV();
 var __extends29 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -7700,6 +7845,7 @@ var EAN8Reader = (
 var EAN8Reader_default = EAN8Reader;
 
 // node_modules/@zxing/library/esm/core/oned/UPCAReader.js
+init_define_NGX_ENV();
 var __extends30 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -7759,6 +7905,7 @@ var UPCAReader = (
 var UPCAReader_default = UPCAReader;
 
 // node_modules/@zxing/library/esm/core/oned/UPCEReader.js
+init_define_NGX_ENV();
 var __extends31 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -8023,6 +8170,7 @@ var MultiFormatUPCEANReader = (
 var MultiFormatUPCEANReader_default = MultiFormatUPCEANReader;
 
 // node_modules/@zxing/library/esm/core/oned/CodaBarReader.js
+init_define_NGX_ENV();
 var __extends33 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -8133,7 +8281,11 @@ var CodaBarReader = (
 );
 var CodaBarReader_default = CodaBarReader;
 
+// node_modules/@zxing/library/esm/core/oned/rss/expanded/RSSExpandedReader.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/oned/rss/AbstractRSSReader.js
+init_define_NGX_ENV();
 var __extends34 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -8268,6 +8420,7 @@ var AbstractRSSReader = (
 var AbstractRSSReader_default = AbstractRSSReader;
 
 // node_modules/@zxing/library/esm/core/oned/rss/DataCharacter.js
+init_define_NGX_ENV();
 var DataCharacter = (
   /** @class */
   function() {
@@ -8300,6 +8453,7 @@ var DataCharacter = (
 var DataCharacter_default = DataCharacter;
 
 // node_modules/@zxing/library/esm/core/oned/rss/FinderPattern.js
+init_define_NGX_ENV();
 var FinderPattern = (
   /** @class */
   function() {
@@ -8337,6 +8491,7 @@ var FinderPattern = (
 var FinderPattern_default = FinderPattern;
 
 // node_modules/@zxing/library/esm/core/oned/rss/RSSUtils.js
+init_define_NGX_ENV();
 var __values14 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -8426,6 +8581,7 @@ var RSSUtils = (
 var RSSUtils_default = RSSUtils;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/BitArrayBuilder.js
+init_define_NGX_ENV();
 var BitArrayBuilder = (
   /** @class */
   function() {
@@ -8473,7 +8629,14 @@ var BitArrayBuilder = (
 );
 var BitArrayBuilder_default = BitArrayBuilder;
 
+// node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoderComplement.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/GeneralAppIdDecoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/BlockParsedResult.js
+init_define_NGX_ENV();
 var BlockParsedResult = (
   /** @class */
   function() {
@@ -8496,7 +8659,11 @@ var BlockParsedResult = (
 );
 var BlockParsedResult_default = BlockParsedResult;
 
+// node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedChar.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedObject.js
+init_define_NGX_ENV();
 var DecodedObject = (
   /** @class */
   function() {
@@ -8551,6 +8718,7 @@ var DecodedChar = (
 var DecodedChar_default = DecodedChar;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedInformation.js
+init_define_NGX_ENV();
 var __extends36 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -8599,6 +8767,7 @@ var DecodedInformation = (
 var DecodedInformation_default = DecodedInformation;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/DecodedNumeric.js
+init_define_NGX_ENV();
 var __extends37 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -8654,6 +8823,7 @@ var DecodedNumeric = (
 var DecodedNumeric_default = DecodedNumeric;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/FieldParser.js
+init_define_NGX_ENV();
 var __values15 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -9301,7 +9471,14 @@ var GeneralAppIdDecoder = (
 );
 var GeneralAppIdDecoder_default = GeneralAppIdDecoder;
 
+// node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01AndOtherAIs.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01decoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AbstractExpandedDecoder.js
+init_define_NGX_ENV();
 var AbstractExpandedDecoder = (
   /** @class */
   function() {
@@ -9423,6 +9600,7 @@ var AI01AndOtherAIs = (
 var AI01AndOtherAIs_default = AI01AndOtherAIs;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AnyAIDecoder.js
+init_define_NGX_ENV();
 var __extends40 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -9457,7 +9635,14 @@ var AnyAIDecoder = (
 );
 var AnyAIDecoder_default = AnyAIDecoder;
 
+// node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013103decoder.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0xDecoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01weightDecoder.js
+init_define_NGX_ENV();
 var __extends41 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -9578,6 +9763,7 @@ var AI013103decoder = (
 var AI013103decoder_default = AI013103decoder;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01320xDecoder.js
+init_define_NGX_ENV();
 var __extends44 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -9621,6 +9807,7 @@ var AI01320xDecoder = (
 var AI01320xDecoder_default = AI01320xDecoder;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01392xDecoder.js
+init_define_NGX_ENV();
 var __extends45 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -9667,6 +9854,7 @@ var AI01392xDecoder = (
 var AI01392xDecoder_default = AI01392xDecoder;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI01393xDecoder.js
+init_define_NGX_ENV();
 var __extends46 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -9722,6 +9910,7 @@ var AI01393xDecoder = (
 var AI01393xDecoder_default = AI01393xDecoder;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/decoders/AI013x0x1xDecoder.js
+init_define_NGX_ENV();
 var __extends47 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -9851,6 +10040,7 @@ function createDecoder(information) {
 }
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedPair.js
+init_define_NGX_ENV();
 var ExpandedPair = (
   /** @class */
   function() {
@@ -9897,6 +10087,7 @@ var ExpandedPair = (
 var ExpandedPair_default = ExpandedPair;
 
 // node_modules/@zxing/library/esm/core/oned/rss/expanded/ExpandedRow.js
+init_define_NGX_ENV();
 var ExpandedRow = (
   /** @class */
   function() {
@@ -10731,7 +10922,11 @@ var RSSExpandedReader = (
 );
 var RSSExpandedReader_default = RSSExpandedReader;
 
+// node_modules/@zxing/library/esm/core/oned/rss/RSS14Reader.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/oned/rss/Pair.js
+init_define_NGX_ENV();
 var __extends49 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -11314,7 +11509,20 @@ var BrowserBarcodeReader = (
   }(BrowserCodeReader)
 );
 
+// node_modules/@zxing/library/esm/browser/BrowserDatamatrixCodeReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/datamatrix/DataMatrixReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/datamatrix/decoder/Decoder.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/datamatrix/decoder/BitMatrixParser.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/datamatrix/decoder/Version.js
+init_define_NGX_ENV();
 var __values18 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -11780,6 +11988,7 @@ var BitMatrixParser = (
 var BitMatrixParser_default = BitMatrixParser;
 
 // node_modules/@zxing/library/esm/core/datamatrix/decoder/DataBlock.js
+init_define_NGX_ENV();
 var __values19 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -11875,7 +12084,11 @@ var DataBlock = (
 );
 var DataBlock_default = DataBlock;
 
+// node_modules/@zxing/library/esm/core/datamatrix/decoder/DecodedBitStreamParser.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/common/BitSource.js
+init_define_NGX_ENV();
 var BitSource = (
   /** @class */
   function() {
@@ -12536,6 +12749,7 @@ var Decoder2 = (
 var Decoder_default2 = Decoder2;
 
 // node_modules/@zxing/library/esm/core/datamatrix/detector/Detector.js
+init_define_NGX_ENV();
 var Detector2 = (
   /** @class */
   function() {
@@ -12881,7 +13095,29 @@ var BrowserDatamatrixCodeReader = (
   }(BrowserCodeReader)
 );
 
+// node_modules/@zxing/library/esm/browser/BrowserMultiFormatReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/MultiFormatReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/qrcode/QRCodeReader.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/qrcode/decoder/Decoder.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/qrcode/decoder/BitMatrixParser.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/qrcode/decoder/Version.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/qrcode/decoder/FormatInformation.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/qrcode/decoder/ErrorCorrectionLevel.js
+init_define_NGX_ENV();
 var ErrorCorrectionLevelValues;
 (function(ErrorCorrectionLevelValues2) {
   ErrorCorrectionLevelValues2[ErrorCorrectionLevelValues2["L"] = 0] = "L";
@@ -13071,6 +13307,7 @@ var FormatInformation = (
 var FormatInformation_default = FormatInformation;
 
 // node_modules/@zxing/library/esm/core/qrcode/decoder/ECBlocks.js
+init_define_NGX_ENV();
 var __values22 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -13128,6 +13365,7 @@ var ECBlocks2 = (
 var ECBlocks_default = ECBlocks2;
 
 // node_modules/@zxing/library/esm/core/qrcode/decoder/ECB.js
+init_define_NGX_ENV();
 var ECB2 = (
   /** @class */
   function() {
@@ -13350,6 +13588,7 @@ var Version2 = (
 var Version_default2 = Version2;
 
 // node_modules/@zxing/library/esm/core/qrcode/decoder/DataMask.js
+init_define_NGX_ENV();
 var DataMaskValues;
 (function(DataMaskValues2) {
   DataMaskValues2[DataMaskValues2["DATA_MASK_000"] = 0] = "DATA_MASK_000";
@@ -13584,6 +13823,7 @@ var BitMatrixParser2 = (
 var BitMatrixParser_default2 = BitMatrixParser2;
 
 // node_modules/@zxing/library/esm/core/qrcode/decoder/DataBlock.js
+init_define_NGX_ENV();
 var __values24 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -13684,7 +13924,11 @@ var DataBlock2 = (
 );
 var DataBlock_default2 = DataBlock2;
 
+// node_modules/@zxing/library/esm/core/qrcode/decoder/DecodedBitStreamParser.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/qrcode/decoder/Mode.js
+init_define_NGX_ENV();
 var ModeValues;
 (function(ModeValues2) {
   ModeValues2[ModeValues2["TERMINATOR"] = 0] = "TERMINATOR";
@@ -14007,6 +14251,7 @@ var DecodedBitStreamParser2 = (
 var DecodedBitStreamParser_default2 = DecodedBitStreamParser2;
 
 // node_modules/@zxing/library/esm/core/qrcode/decoder/QRCodeDecoderMetaData.js
+init_define_NGX_ENV();
 var QRCodeDecoderMetaData = (
   /** @class */
   function() {
@@ -14135,7 +14380,14 @@ var Decoder3 = (
 );
 var Decoder_default3 = Decoder3;
 
+// node_modules/@zxing/library/esm/core/qrcode/detector/Detector.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPatternFinder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/qrcode/detector/AlignmentPattern.js
+init_define_NGX_ENV();
 var __extends54 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -14362,7 +14614,11 @@ var AlignmentPatternFinder = (
 );
 var AlignmentPatternFinder_default = AlignmentPatternFinder;
 
+// node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternFinder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/qrcode/detector/FinderPattern.js
+init_define_NGX_ENV();
 var __extends55 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -14419,6 +14675,7 @@ var FinderPattern2 = (
 var FinderPattern_default2 = FinderPattern2;
 
 // node_modules/@zxing/library/esm/core/qrcode/detector/FinderPatternInfo.js
+init_define_NGX_ENV();
 var FinderPatternInfo = (
   /** @class */
   function() {
@@ -15334,7 +15591,11 @@ var QRCodeReader = (
 );
 var QRCodeReader_default = QRCodeReader;
 
+// node_modules/@zxing/library/esm/core/pdf417/PDF417Reader.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/pdf417/PDF417Common.js
+init_define_NGX_ENV();
 var __values28 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -20977,7 +21238,11 @@ var PDF417Common = (
 );
 var PDF417Common_default = PDF417Common;
 
+// node_modules/@zxing/library/esm/core/pdf417/detector/Detector.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/pdf417/detector/PDF417DetectorResult.js
+init_define_NGX_ENV();
 var PDF417DetectorResult = (
   /** @class */
   function() {
@@ -21222,7 +21487,14 @@ var Detector4 = (
 );
 var Detector_default4 = Detector4;
 
+// node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417ScanningDecoder.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ErrorCorrection.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusPoly.js
+init_define_NGX_ENV();
 var __values30 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -21470,7 +21742,11 @@ var ModulusPoly = (
 );
 var ModulusPoly_default = ModulusPoly;
 
+// node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusGF.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/pdf417/decoder/ec/ModulusBase.js
+init_define_NGX_ENV();
 var ModulusBase = (
   /** @class */
   function() {
@@ -21723,6 +21999,7 @@ var ErrorCorrection = (
 var ErrorCorrection_default = ErrorCorrection;
 
 // node_modules/@zxing/library/esm/core/pdf417/decoder/BoundingBox.js
+init_define_NGX_ENV();
 var BoundingBox = (
   /** @class */
   function() {
@@ -21838,7 +22115,11 @@ var BoundingBox = (
 );
 var BoundingBox_default = BoundingBox;
 
+// node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResultRowIndicatorColumn.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/pdf417/decoder/BarcodeMetadata.js
+init_define_NGX_ENV();
 var BarcodeMetadata = (
   /** @class */
   function() {
@@ -21869,7 +22150,11 @@ var BarcodeMetadata = (
 );
 var BarcodeMetadata_default = BarcodeMetadata;
 
+// node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResultColumn.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/util/Formatter.js
+init_define_NGX_ENV();
 var Formatter = (
   /** @class */
   function() {
@@ -22022,6 +22307,7 @@ var DetectionResultColumn = (
 var DetectionResultColumn_default = DetectionResultColumn;
 
 // node_modules/@zxing/library/esm/core/pdf417/decoder/BarcodeValue.js
+init_define_NGX_ENV();
 var __values33 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -22368,6 +22654,7 @@ var DetectionResultRowIndicatorColumn = (
 var DetectionResultRowIndicatorColumn_default = DetectionResultRowIndicatorColumn;
 
 // node_modules/@zxing/library/esm/core/pdf417/decoder/DetectionResult.js
+init_define_NGX_ENV();
 var __values35 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -22623,6 +22910,7 @@ var DetectionResult = (
 var DetectionResult_default = DetectionResult;
 
 // node_modules/@zxing/library/esm/core/pdf417/decoder/Codeword.js
+init_define_NGX_ENV();
 var Codeword = (
   /** @class */
   function() {
@@ -22673,6 +22961,7 @@ var Codeword = (
 var Codeword_default = Codeword;
 
 // node_modules/@zxing/library/esm/core/pdf417/decoder/PDF417CodewordDecoder.js
+init_define_NGX_ENV();
 var PDF417CodewordDecoder = (
   /** @class */
   function() {
@@ -22774,7 +23063,11 @@ var PDF417CodewordDecoder = (
 );
 var PDF417CodewordDecoder_default = PDF417CodewordDecoder;
 
+// node_modules/@zxing/library/esm/core/pdf417/decoder/DecodedBitStreamParser.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/pdf417/PDF417ResultMetadata.js
+init_define_NGX_ENV();
 var PDF417ResultMetadata = (
   /** @class */
   function() {
@@ -22856,6 +23149,7 @@ var PDF417ResultMetadata = (
 var PDF417ResultMetadata_default = PDF417ResultMetadata;
 
 // node_modules/@zxing/library/esm/core/util/Long.js
+init_define_NGX_ENV();
 var Long = (
   /** @class */
   function() {
@@ -22872,7 +23166,14 @@ var Long = (
 );
 var Long_default = Long;
 
+// node_modules/@zxing/library/esm/core/util/ByteArrayOutputStream.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/util/OutputStream.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/NullPointerException.js
+init_define_NGX_ENV();
 var __extends58 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -22934,6 +23235,7 @@ var OutputStream = (
 var OutputStream_default = OutputStream;
 
 // node_modules/@zxing/library/esm/core/OutOfMemoryError.js
+init_define_NGX_ENV();
 var __extends59 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -24242,6 +24544,7 @@ var PDF417Reader = (
 var PDF417Reader_default = PDF417Reader;
 
 // node_modules/@zxing/library/esm/core/ReaderException.js
+init_define_NGX_ENV();
 var __extends61 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -24435,6 +24738,7 @@ var BrowserMultiFormatReader = (
 );
 
 // node_modules/@zxing/library/esm/browser/BrowserPDF417Reader.js
+init_define_NGX_ENV();
 var __extends63 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -24467,6 +24771,7 @@ var BrowserPDF417Reader = (
 );
 
 // node_modules/@zxing/library/esm/browser/BrowserQRCodeReader.js
+init_define_NGX_ENV();
 var __extends64 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -24498,7 +24803,11 @@ var BrowserQRCodeReader = (
   }(BrowserCodeReader)
 );
 
+// node_modules/@zxing/library/esm/browser/BrowserQRCodeSvgWriter.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/EncodeHintType.js
+init_define_NGX_ENV();
 var EncodeHintType;
 (function(EncodeHintType2) {
   EncodeHintType2[EncodeHintType2["ERROR_CORRECTION"] = 0] = "ERROR_CORRECTION";
@@ -24518,7 +24827,11 @@ var EncodeHintType;
 })(EncodeHintType || (EncodeHintType = {}));
 var EncodeHintType_default = EncodeHintType;
 
+// node_modules/@zxing/library/esm/core/qrcode/encoder/Encoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/common/reedsolomon/ReedSolomonEncoder.js
+init_define_NGX_ENV();
 var ReedSolomonEncoder = (
   /** @class */
   function() {
@@ -24567,6 +24880,7 @@ var ReedSolomonEncoder = (
 var ReedSolomonEncoder_default = ReedSolomonEncoder;
 
 // node_modules/@zxing/library/esm/core/qrcode/encoder/MaskUtil.js
+init_define_NGX_ENV();
 var MaskUtil = (
   /** @class */
   function() {
@@ -24718,6 +25032,7 @@ var MaskUtil = (
 var MaskUtil_default = MaskUtil;
 
 // node_modules/@zxing/library/esm/core/qrcode/encoder/ByteMatrix.js
+init_define_NGX_ENV();
 var __values39 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -24826,6 +25141,7 @@ var ByteMatrix = (
 var ByteMatrix_default = ByteMatrix;
 
 // node_modules/@zxing/library/esm/core/qrcode/encoder/QRCode.js
+init_define_NGX_ENV();
 var QRCode = (
   /** @class */
   function() {
@@ -24891,7 +25207,11 @@ var QRCode = (
 );
 var QRCode_default = QRCode;
 
+// node_modules/@zxing/library/esm/core/qrcode/encoder/MatrixUtil.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/WriterException.js
+init_define_NGX_ENV();
 var __extends65 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -25226,6 +25546,7 @@ var MatrixUtil = (
 var MatrixUtil_default = MatrixUtil;
 
 // node_modules/@zxing/library/esm/core/qrcode/encoder/BlockPair.js
+init_define_NGX_ENV();
 var BlockPair = (
   /** @class */
   function() {
@@ -25848,7 +26169,17 @@ var BrowserQRCodeSvgWriter = (
   }()
 );
 
+// node_modules/@zxing/library/esm/browser/DecodeContinuouslyCallback.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/browser/HTMLVisualMediaElement.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/MultiFormatWriter.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/qrcode/QRCodeWriter.js
+init_define_NGX_ENV();
 var QRCodeWriter = (
   /** @class */
   function() {
@@ -25966,6 +26297,7 @@ var MultiFormatWriter = (
 var MultiFormatWriter_default = MultiFormatWriter;
 
 // node_modules/@zxing/library/esm/core/PlanarYUVLuminanceSource.js
+init_define_NGX_ENV();
 var __extends66 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -26083,6 +26415,7 @@ var PlanarYUVLuminanceSource = (
 var PlanarYUVLuminanceSource_default = PlanarYUVLuminanceSource;
 
 // node_modules/@zxing/library/esm/core/RGBLuminanceSource.js
+init_define_NGX_ENV();
 var __extends67 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -26189,6 +26522,7 @@ var RGBLuminanceSource = (
 var RGBLuminanceSource_default = RGBLuminanceSource;
 
 // node_modules/@zxing/library/esm/core/util/Charset.js
+init_define_NGX_ENV();
 var __extends68 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -26222,6 +26556,7 @@ var Charset = (
 var Charset_default = Charset;
 
 // node_modules/@zxing/library/esm/core/util/StandardCharsets.js
+init_define_NGX_ENV();
 var StandardCharsets = (
   /** @class */
   function() {
@@ -26234,6 +26569,7 @@ var StandardCharsets = (
 var StandardCharsets_default = StandardCharsets;
 
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/DefaultPlacement.js
+init_define_NGX_ENV();
 var DefaultPlacement = (
   /** @class */
   function() {
@@ -26371,7 +26707,11 @@ var DefaultPlacement = (
 );
 var DefaultPlacement_default = DefaultPlacement;
 
+// node_modules/@zxing/library/esm/core/datamatrix/encoder/ErrorCorrection.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/constants.js
+init_define_NGX_ENV();
 var _a;
 var FACTOR_SETS = [
   5,
@@ -26947,7 +27287,11 @@ var ErrorCorrection2 = (
 );
 var ErrorCorrection_default2 = ErrorCorrection2;
 
+// node_modules/@zxing/library/esm/core/datamatrix/encoder/HighLevelEncoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/ASCIIEncoder.js
+init_define_NGX_ENV();
 var ASCIIEncoder = (
   /** @class */
   function() {
@@ -27011,6 +27355,7 @@ var ASCIIEncoder = (
 );
 
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/Base256Encoder.js
+init_define_NGX_ENV();
 var Base256Encoder = (
   /** @class */
   function() {
@@ -27065,6 +27410,7 @@ var Base256Encoder = (
 );
 
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/C40Encoder.js
+init_define_NGX_ENV();
 var C40Encoder = (
   /** @class */
   function() {
@@ -27241,6 +27587,7 @@ var C40Encoder = (
 );
 
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/EdifactEncoder.js
+init_define_NGX_ENV();
 var EdifactEncoder = (
   /** @class */
   function() {
@@ -27350,7 +27697,11 @@ var EdifactEncoder = (
   }()
 );
 
+// node_modules/@zxing/library/esm/core/datamatrix/encoder/EncoderContext.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/SymbolInfo.js
+init_define_NGX_ENV();
 var __extends69 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -27658,6 +28009,7 @@ var EncoderContext = (
 );
 
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/X12Encoder.js
+init_define_NGX_ENV();
 var __extends70 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -27746,6 +28098,7 @@ var X12Encoder = (
 );
 
 // node_modules/@zxing/library/esm/core/datamatrix/encoder/TextEncoder.js
+init_define_NGX_ENV();
 var __extends71 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -28120,7 +28473,20 @@ var HighLevelEncoder = (
 );
 var HighLevelEncoder_default = HighLevelEncoder;
 
+// node_modules/@zxing/library/esm/core/datamatrix/DataMatrixWriter.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/datamatrix/encoder/index.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/datamatrix/encoder/MinimalEncoder.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/common/MinimalECIInput.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/common/ECIEncoderSet.js
+init_define_NGX_ENV();
 var __values42 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -29402,7 +29768,14 @@ var DataMatrixWriter = (
 );
 var DataMatrixWriter_default = DataMatrixWriter;
 
+// node_modules/@zxing/library/esm/core/aztec/AztecWriter.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/aztec/encoder/Encoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/aztec/encoder/AztecCode.js
+init_define_NGX_ENV();
 var AztecCode = (
   /** @class */
   function() {
@@ -29443,7 +29816,11 @@ var AztecCode = (
 );
 var AztecCode_default = AztecCode;
 
+// node_modules/@zxing/library/esm/core/aztec/encoder/HighLevelEncoder.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/util/Collections.js
+init_define_NGX_ENV();
 var Collections = (
   /** @class */
   function() {
@@ -29460,7 +29837,17 @@ var Collections = (
 );
 var Collections_default = Collections;
 
+// node_modules/@zxing/library/esm/core/aztec/encoder/State.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/aztec/encoder/TokenHelpers.js
+init_define_NGX_ENV();
+
+// node_modules/@zxing/library/esm/core/aztec/encoder/SimpleToken.js
+init_define_NGX_ENV();
+
 // node_modules/@zxing/library/esm/core/aztec/encoder/Token.js
+init_define_NGX_ENV();
 var Token = (
   /** @class */
   function() {
@@ -29524,6 +29911,7 @@ var SimpleToken = (
 var SimpleToken_default = SimpleToken;
 
 // node_modules/@zxing/library/esm/core/aztec/encoder/BinaryShiftToken.js
+init_define_NGX_ENV();
 var __extends74 = /* @__PURE__ */ function() {
   var extendStatics = function(d, b) {
     extendStatics = Object.setPrototypeOf || { __proto__: [] } instanceof Array && function(d2, b2) {
@@ -29586,6 +29974,7 @@ function add(token, value, bitCount) {
 }
 
 // node_modules/@zxing/library/esm/core/aztec/encoder/EncoderConstants.js
+init_define_NGX_ENV();
 var MODE_NAMES = [
   "UPPER",
   "LOWER",
@@ -29601,6 +29990,7 @@ var MODE_PUNCT = 4;
 var EMPTY_TOKEN = new SimpleToken_default(null, 0, 0);
 
 // node_modules/@zxing/library/esm/core/aztec/encoder/LatchTable.js
+init_define_NGX_ENV();
 var LATCH_TABLE = [
   Int32Array.from([
     0,
@@ -29644,6 +30034,7 @@ var LATCH_TABLE = [
 ];
 
 // node_modules/@zxing/library/esm/core/aztec/encoder/ShiftTable.js
+init_define_NGX_ENV();
 var __values44 = function(o) {
   var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
   if (m) return m.call(o);
@@ -29812,6 +30203,7 @@ var State = (
 var State_default = State;
 
 // node_modules/@zxing/library/esm/core/aztec/encoder/CharMap.js
+init_define_NGX_ENV();
 function static_CHAR_MAP(CHAR_MAP2) {
   var spaceCharCode = StringUtils_default.getCharCode(" ");
   var pointCharCode = StringUtils_default.getCharCode(".");

@@ -1,9 +1,11 @@
 import {
   __spreadProps,
-  __spreadValues
-} from "./chunk-GDDPKLXH.js";
+  __spreadValues,
+  init_define_NGX_ENV
+} from "./chunk-TG4IPNUP.js";
 
 // node_modules/zone.js/fesm2015/zone.js
+init_define_NGX_ENV();
 var global = globalThis;
 function __symbol__(name) {
   const symbolPrefix = global["__Zone_symbol_prefix"] || "__zone_symbol__";

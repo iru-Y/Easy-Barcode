@@ -3,7 +3,7 @@ import {
   _RecycleViewRepeaterStrategy,
   _VIEW_REPEATER_STRATEGY,
   isDataSource
-} from "./chunk-LRRP2M73.js";
+} from "./chunk-3HTP6CRS.js";
 import {
   RtlScrollAxisType,
   _animationsDisabled,
@@ -11,7 +11,7 @@ import {
   coerceCssPixelValue,
   getRtlScrollAxisType,
   supportsScrollBehavior
-} from "./chunk-ADLM4IO7.js";
+} from "./chunk-LSMFPCZ7.js";
 import {
   A11yModule,
   ESCAPE,
@@ -24,21 +24,21 @@ import {
   _getFocusedElementPierceShadowDom,
   coerceArray,
   hasModifierKey
-} from "./chunk-I7BEWDQK.js";
+} from "./chunk-W5PL532P.js";
 import {
   BidiModule,
   Directionality
-} from "./chunk-IHODSSP4.js";
+} from "./chunk-MWBS6PCZ.js";
 import {
   Platform,
   _CdkPrivateStyleLoader,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-XYQTM4CO.js";
+} from "./chunk-QAHM36L4.js";
 import {
   Location
-} from "./chunk-3RM23ATJ.js";
-import "./chunk-YOLVM6W5.js";
+} from "./chunk-32ZYWBSP.js";
+import "./chunk-E5ICT7VG.js";
 import {
   ANIMATION_MODULE_TYPE,
   ApplicationRef,
@@ -104,7 +104,7 @@ import {
   ɵɵstyleProp,
   ɵɵtemplate,
   ɵɵviewQuery
-} from "./chunk-DSM6EVEA.js";
+} from "./chunk-X4JJA723.js";
 import {
   Observable,
   Subject,
@@ -125,13 +125,24 @@ import {
   take,
   takeUntil,
   takeWhile
-} from "./chunk-M6M67DWH.js";
+} from "./chunk-RVZ5CSLY.js";
 import {
   __spreadProps,
-  __spreadValues
-} from "./chunk-GDDPKLXH.js";
+  __spreadValues,
+  init_define_NGX_ENV
+} from "./chunk-TG4IPNUP.js";
+
+// node_modules/@angular/material/fesm2022/dialog.mjs
+init_define_NGX_ENV();
+
+// node_modules/@angular/material/fesm2022/module-Cz4ZB2Wr.mjs
+init_define_NGX_ENV();
+
+// node_modules/@angular/cdk/fesm2022/dialog.mjs
+init_define_NGX_ENV();
 
 // node_modules/@angular/cdk/fesm2022/portal.mjs
+init_define_NGX_ENV();
 function throwNullPortalError() {
   throw Error("Must provide a portal to attach");
 }
@@ -683,7 +694,11 @@ var PortalModule = class _PortalModule {
   }], null, null);
 })();
 
+// node_modules/@angular/cdk/fesm2022/overlay-module-Bd2UplUU.mjs
+init_define_NGX_ENV();
+
 // node_modules/@angular/cdk/fesm2022/scrolling.mjs
+init_define_NGX_ENV();
 var _c0 = ["contentWrapper"];
 var _c1 = ["*"];
 var VIRTUAL_SCROLL_STRATEGY = new InjectionToken("VIRTUAL_SCROLL_STRATEGY");
@@ -5748,6 +5763,7 @@ var DialogModule = class _DialogModule {
 })();
 
 // node_modules/@angular/cdk/fesm2022/overlay.mjs
+init_define_NGX_ENV();
 var FullscreenOverlayContainer = class _FullscreenOverlayContainer extends OverlayContainer {
   _renderer = inject(RendererFactory2).createRenderer(null, null);
   _fullScreenEventName;

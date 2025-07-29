@@ -5,6 +5,7 @@ import {
   ViewChild,
   ElementRef,
   TemplateRef,
+  OnDestroy,
 } from '@angular/core';
 import {
   FormControl,
@@ -12,11 +13,10 @@ import {
   ReactiveFormsModule,
   FormsModule,
 } from '@angular/forms';
-import { BrowserMultiFormatReader, Result } from '@zxing/library';
+import { BrowserMultiFormatReader, Result, DecodeHintType } from '@zxing/library';
 import { BarcodeService } from '../../../domain/services/barcode.service';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { AlertService } from '../../../domain/services/alert.services';
-
 import {
   MatDialog,
   MatDialogRef,
@@ -27,6 +27,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatRadioModule } from '@angular/material/radio';
+
+interface ExtendedMediaTrackConstraintSet extends MediaTrackConstraintSet {
+  focusMode?: 'none' | 'manual' | 'single-shot' | 'continuous';
+  torch?: boolean;
+}
+
+interface ExtendedMediaTrackCapabilities extends MediaTrackCapabilities {
+  torch?: boolean;
+}
 
 @Component({
   selector: 'app-barcode-scanner',
@@ -45,22 +54,21 @@ import { MatRadioModule } from '@angular/material/radio';
   templateUrl: './barcode-scanner.component.html',
   styleUrls: ['./barcode-scanner.component.css'],
 })
-export class BarcodeScannerComponent implements OnInit, AfterViewInit {
+export class BarcodeScannerComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('videoElement') videoElement!: ElementRef<HTMLVideoElement>;
   @ViewChild('modalTemplate') modalTemplate!: TemplateRef<any>;
   dialogRef!: MatDialogRef<any>;
   countControl = new FormControl('', [Validators.required, Validators.min(1)]);
   desiredCount: number | null = null;
   isSending = false;
+  isTorchOn = false;
+  scanFeedback = '';
 
   private codeReader = new BrowserMultiFormatReader();
-
+  private stream: MediaStream | null = null;
   scannedBarcodes: string[] = [];
-
   showModal = false;
-
   scannedFiles: { filename: string }[] = [];
-
   selectedFilename: string | null = null;
   newFilenameControl = new FormControl('', [Validators.required]);
 
@@ -84,6 +92,7 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
       this.scannedFiles = await this.barcodeService.getUploadedBarcodes();
     } catch {
       this.scannedFiles = [];
+      this.alertService.show('Erro ao carregar arquivos escaneados.');
     }
   }
 
@@ -91,40 +100,129 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
     this.startScanner();
   }
 
-  startScanner(): void {
+  async startScanner(): Promise<void> {
     if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-      console.warn('Seu navegador não suporta acesso à câmera.');
+      this.alertService.show('Seu navegador não suporta acesso à câmera.');
       return;
     }
 
-    this.codeReader
-      .decodeFromVideoDevice(
-        null,
-        this.videoElement.nativeElement,
-        (result, error) => {
-          if (result) {
-            this.onDetect(result);
-          }
-        }
-      )
-      .catch((err) => {
-        console.error('Erro ao acessar a câmera:', err);
+    try {
+      this.stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: 'environment',
+          width: { ideal: 1280 },
+          height: { ideal: 720 },
+        },
       });
+
+      this.videoElement.nativeElement.srcObject = this.stream;
+
+      const hints = new Map();
+      hints.set(DecodeHintType.TRY_HARDER, true);
+      hints.set(DecodeHintType.POSSIBLE_FORMATS, [
+        'EAN_13',
+        'CODE_128',
+        'QR_CODE',
+        'UPC_A',
+        'UPC_E',
+        'ITF',
+      ]);
+
+      this.codeReader.hints = hints;
+
+      this.codeReader
+        .decodeFromVideoDevice(
+          null,
+          this.videoElement.nativeElement,
+          (result, error) => {
+            if (result) {
+              this.onDetect(result);
+            } else if (error) {
+              this.handleScanError(error);
+            }
+          }
+        )
+        .catch((err) => {
+          console.error('Erro ao acessar a câmera:', err);
+          this.alertService.show('Erro ao acessar a câmera. Verifique as permissões.');
+        });
+
+      this.enableAutoFocus();
+    } catch (err) {
+      console.error('Erro ao iniciar o scanner:', err);
+      this.alertService.show('Erro ao iniciar a câmera.');
+    }
+  }
+
+  handleScanError(error: any): void {
+    if (error?.message?.includes('Failed to decode')) {
+      this.scanFeedback = 'Código de barras difícil de ler. Ajuste a distância ou iluminação.';
+    } else {
+      this.scanFeedback = 'Aguardando leitura de código de barras...';
+    }
   }
 
   onDetect(result: Result): void {
     const raw = result.getText().trim();
     if (!raw) return;
 
-    if (this.scannedBarcodes.includes(raw)) return;
+    if (this.scannedBarcodes.includes(raw)) {
+      this.scanFeedback = 'Código já escaneado. Tente outro.';
+      return;
+    }
+
     this.scannedBarcodes.push(raw);
+    this.scanFeedback = `Código escaneado: ${raw}`;
+    this.alertService.show(`Código escaneado: ${raw}`);
+  }
+
+  async toggleTorch(): Promise<void> {
+    if (!this.stream) return;
+
+    const track = this.stream.getVideoTracks()[0];
+    const capabilities = track.getCapabilities() as ExtendedMediaTrackCapabilities;
+
+    if (!capabilities.torch) {
+      this.alertService.show('Este dispositivo não suporta lanterna.');
+      return;
+    }
+
+    try {
+      await track.applyConstraints({
+        advanced: [{ torch: !this.isTorchOn } as ExtendedMediaTrackConstraintSet],
+      });
+      this.isTorchOn = !this.isTorchOn;
+      this.alertService.show(`Lanterna ${this.isTorchOn ? 'ativada' : 'desativada'}.`);
+    } catch (err) {
+      console.error('Erro ao alternar lanterna:', err);
+      this.alertService.show('Erro ao alternar lanterna.');
+    }
+  }
+
+  enableAutoFocus(): void {
+    if (!this.stream) return;
+
+    const track = this.stream.getVideoTracks()[0];
+    const capabilities = track.getCapabilities() as ExtendedMediaTrackCapabilities;
+
+    if ('focusMode' in capabilities) {
+      track
+        .applyConstraints({
+          advanced: [{ focusMode: 'continuous' } as ExtendedMediaTrackConstraintSet],
+        })
+        .catch((err) => {
+          console.warn('Autofocus não suportado:', err);
+        });
+    } else {
+      console.warn('focusMode não suportado neste dispositivo.');
+    }
   }
 
   openModal() {
     this.dialogRef = this.dialog.open(this.modalTemplate, {
       width: '400px',
       disableClose: true,
-    panelClass: 'custom-dialog-container',
+      panelClass: 'custom-dialog-container',
     });
   }
 
@@ -163,5 +261,12 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit {
     }
 
     this.isSending = false;
+  }
+
+  ngOnDestroy(): void {
+    this.codeReader.reset();
+    if (this.stream) {
+      this.stream.getTracks().forEach((track) => track.stop());
+    }
   }
 }

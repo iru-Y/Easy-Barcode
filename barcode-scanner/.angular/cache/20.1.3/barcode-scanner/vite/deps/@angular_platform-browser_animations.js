@@ -1,9 +1,9 @@
 import {
   BrowserModule,
   DomRendererFactory2
-} from "./chunk-URCOI4V6.js";
-import "./chunk-3RM23ATJ.js";
-import "./chunk-YOLVM6W5.js";
+} from "./chunk-BKFB4M3I.js";
+import "./chunk-32ZYWBSP.js";
+import "./chunk-E5ICT7VG.js";
 import {
   ANIMATION_MODULE_TYPE,
   DOCUMENT,
@@ -19,14 +19,25 @@ import {
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
   ɵɵinject
-} from "./chunk-DSM6EVEA.js";
-import "./chunk-M6M67DWH.js";
+} from "./chunk-X4JJA723.js";
+import "./chunk-RVZ5CSLY.js";
 import {
   __objRest,
-  __spreadValues
-} from "./chunk-GDDPKLXH.js";
+  __spreadValues,
+  init_define_NGX_ENV
+} from "./chunk-TG4IPNUP.js";
+
+// node_modules/@angular/platform-browser/fesm2022/animations.mjs
+init_define_NGX_ENV();
+
+// node_modules/@angular/animations/fesm2022/browser.mjs
+init_define_NGX_ENV();
+
+// node_modules/@angular/animations/fesm2022/util.mjs
+init_define_NGX_ENV();
 
 // node_modules/@angular/animations/fesm2022/private_export.mjs
+init_define_NGX_ENV();
 var AnimationMetadataType;
 (function(AnimationMetadataType2) {
   AnimationMetadataType2[AnimationMetadataType2["State"] = 0] = "State";

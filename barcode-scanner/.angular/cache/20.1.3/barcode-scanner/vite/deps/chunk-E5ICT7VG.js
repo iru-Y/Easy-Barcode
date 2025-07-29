@@ -1,0 +1,34 @@
+import {
+  init_define_NGX_ENV
+} from "./chunk-TG4IPNUP.js";
+
+// node_modules/@angular/common/fesm2022/xhr.mjs
+init_define_NGX_ENV();
+function parseCookieValue(cookieStr, name) {
+  name = encodeURIComponent(name);
+  for (const cookie of cookieStr.split(";")) {
+    const eqIndex = cookie.indexOf("=");
+    const [cookieName, cookieValue] = eqIndex == -1 ? [cookie, ""] : [cookie.slice(0, eqIndex), cookie.slice(eqIndex + 1)];
+    if (cookieName.trim() === name) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+  return null;
+}
+var XhrFactory = class {
+};
+
+export {
+  parseCookieValue,
+  XhrFactory
+};
+/*! Bundled license information:
+
+@angular/common/fesm2022/xhr.mjs:
+  (**
+   * @license Angular v20.1.3
+   * (c) 2010-2025 Google LLC. https://angular.io/
+   * License: MIT
+   *)
+*/
+//# sourceMappingURL=chunk-E5ICT7VG.js.map
