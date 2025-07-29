@@ -52,12 +52,8 @@ public class BarcodeService {
                 "resource_type", "raw",
                 "folder", "scanner-files"
         ));
-
         String cloudinaryUrl = (String) uploadResult.get("secure_url");
         log.info("☁️ Arquivo '{}' enviado para Cloudinary: {}", finalFilename, cloudinaryUrl);
-
-        Files.delete(path);
-        log.info("🗑️ Arquivo local deletado após upload: {}", path);
 
         FileTime creationTime = (FileTime) Files.getAttribute(path, "creationTime");
         LocalDateTime createdAt = creationTime
@@ -71,49 +67,74 @@ public class BarcodeService {
                 .filter(b -> !b.isEmpty())
                 .collect(Collectors.toList());
 
+        Files.delete(path);
+        log.info("🗑️ Arquivo local deletado após upload: {}", path);
+
         return new ScannerFileDto(finalFilename, createdAt, allBarcodes);
     }
 
+
     public List<ScannerFileDto> listScannerFilesWithBarcodes() throws IOException {
+        List<ScannerFileDto> result = new ArrayList<>();
+
+        // 1. Listar arquivos locais (opcional, se desejar manter)
         Path dir = Paths.get(DIRECTORY);
-
-        if (!Files.exists(dir)) {
-            log.warn("⚠️ Pasta de scanner-files não encontrada.");
-            return List.of();
+        if (Files.exists(dir)) {
+            try (Stream<Path> stream = Files.list(dir)) {
+                List<ScannerFileDto> localFiles = stream
+                        .filter(Files::isRegularFile)
+                        .map(path -> {
+                            try {
+                                String filename = path.getFileName().toString();
+                                FileTime creationTime = (FileTime) Files.getAttribute(path, "creationTime");
+                                LocalDateTime createdAt = creationTime
+                                        .toInstant()
+                                        .atZone(ZoneId.systemDefault())
+                                        .toLocalDateTime();
+                                List<String> barcodes = Files.readAllLines(path).stream()
+                                        .map(String::trim)
+                                        .filter(s -> !s.isEmpty())
+                                        .collect(Collectors.toList());
+                                log.debug("📄 Arquivo local processado: {} ({} barcodes)", filename, barcodes.size());
+                                return new ScannerFileDto(filename, createdAt, barcodes);
+                            } catch (IOException e) {
+                                log.error("❌ Erro ao ler arquivo local: {}", path, e);
+                                return null;
+                            }
+                        })
+                        .filter(Objects::nonNull)
+                        .toList();
+                result.addAll(localFiles);
+            }
         }
 
-        try (Stream<Path> stream = Files.list(dir)) {
-            List<ScannerFileDto> result = stream
-                    .filter(Files::isRegularFile)
-                    .map(path -> {
-                        try {
-                            String filename = path.getFileName().toString();
+        // 2. Listar arquivos no Cloudinary
+        try {
+            Map<String, Object> cloudinaryResponse = cloudinary.search()
+                    .expression("folder:scanner-files AND resource_type:raw")
+                    .sort_by("created_at", "desc")
+                    .max_results(100)
+                    .execute();
 
-                            FileTime creationTime = (FileTime) Files.getAttribute(path, "creationTime");
-                            LocalDateTime createdAt = creationTime
-                                    .toInstant()
-                                    .atZone(ZoneId.systemDefault())
-                                    .toLocalDateTime();
+            List<Map<String, Object>> resources = (List<Map<String, Object>>) cloudinaryResponse.get("resources");
 
-                            List<String> barcodes = Files.readAllLines(path)
-                                    .stream()
-                                    .map(String::trim)
-                                    .filter(s -> !s.isEmpty())
-                                    .collect(Collectors.toList());
+            for (Map<String, Object> resource : resources) {
+                String filename = (String) resource.get("filename");
+                String secureUrl = (String) resource.get("secure_url");
+                String createdAtStr = (String) resource.get("created_at");
+                LocalDateTime createdAt = LocalDateTime.parse(createdAtStr.replace("Z", "")).atZone(ZoneId.of("UTC")).withZoneSameInstant(ZoneId.systemDefault()).toLocalDateTime();
 
-                            log.debug("📄 Arquivo processado: {} ({} barcodes)", filename, barcodes.size());
+                // (Opcional) baixar CSV temporariamente e ler barcodes
+                List<String> barcodes = fetchBarcodesFromCloudinaryUrl(secureUrl);
+                result.add(new ScannerFileDto(filename + ".csv", createdAt, barcodes));
+            }
 
-                            return new ScannerFileDto(filename, createdAt, barcodes);
-                        } catch (IOException e) {
-                            log.error("❌ Erro ao ler arquivo: {}", path, e);
-                            return null;
-                        }
-                    })
-                    .filter(Objects::nonNull)
-                    .collect(Collectors.toList());
-
-            log.info("📁 Total de arquivos de scanner lidos: {}", result.size());
-            return result;
+            log.info("☁️ Total de arquivos no Cloudinary: {}", resources.size());
+        } catch (Exception e) {
+            log.error("❌ Erro ao listar arquivos do Cloudinary", e);
         }
+
+        return result;
     }
+
 }
