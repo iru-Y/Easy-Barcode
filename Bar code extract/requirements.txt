@@ -1,2 +1,5 @@
+pyautogui
+requests
+keyboard
 Flask
 Flask-Cors
