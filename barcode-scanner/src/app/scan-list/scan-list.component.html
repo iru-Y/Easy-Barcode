@@ -5,8 +5,21 @@
       <div class="scan-item" role="listitem">
         <div class="scan-info">
           <p class="barcode-text">{{ item.filename }}</p>
-          <p class="scan-time">Escaneado em {{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}</p>
+          <p class="scan-time">
+            Escaneado em {{ item.createdAt | date: 'dd/MM/yyyy HH:mm' }}
+          </p>
         </div>
+        <div>
+
+        <button
+          mat-icon-button
+          color="primary"
+          aria-label="Deletar arquivo"
+          (click)="deleteBarcode(item.filename)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+
         <button
           mat-icon-button
           color="primary"
@@ -15,13 +28,19 @@
         >
           <mat-icon>visibility</mat-icon>
         </button>
+        </div>
       </div>
     }
   </div>
 </section>
 
 @if (modalOpen) {
-  <div class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
     <div class="modal">
       <h3 class="modal-title" id="modalTitle">Códigos Escaneados</h3>
       <ul class="barcode-list">
@@ -43,12 +62,16 @@
       <p class="scan-time">
         Escaneado em {{ selectedDate | date: 'dd/MM/yyyy HH:mm' }}
       </p>
-        <button
+      <button
         mat-flat-button
+        color="primary"
         class="close-modal"
         (click)="closeModal()"
-        > Fechar</button>
+      >
+        Fechar
+      </button>
     </div>
   </div>
 }
+
 <app-footer-nav></app-footer-nav>

@@ -12,7 +12,6 @@ import java.util.*;
 
 @RestController
 @RequestMapping("/barcode")
-@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 @Slf4j
 public class BarcodeController {
@@ -68,7 +67,7 @@ public class BarcodeController {
         boolean deleted = barcodeService.deleteFileByName(filename);
 
         if (deleted) {
-            return ResponseEntity.noContent().build(); // 204
+            return ResponseEntity.noContent().build();
         } else {
             return ResponseEntity.status(404).body(Map.of("error", "Arquivo não encontrado ou falha ao deletar"));
         }

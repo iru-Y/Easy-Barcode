@@ -43,6 +43,19 @@ export class ScanListComponent implements OnInit {
     this.code = [];
   }
 
+  async deleteBarcode(filename: string) {
+  if (!confirm(`Tem certeza que deseja deletar "${filename}"?`)) return;
+
+  try {
+    await this.barcodeService.deleteBarcodeByFilename(filename);
+    console.log(`🗑️ Deletado: ${filename}`);
+  } catch (err) {
+    console.error('Erro ao deletar arquivo:', err);
+    alert('Falha ao deletar o arquivo.');
+  }
+}
+
+
   copyToClipboard(text: string) {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text).then(() => {

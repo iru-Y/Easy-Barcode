@@ -10,13 +10,16 @@
   margin-bottom: 12px;
   color: white;
   font-weight: 500;
+  font-family: 'MontSerrat';
 }
 
 .last-scan {
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   overflow-y: auto;
+  height: 100%;
 }
 
 .scan-item {
@@ -24,9 +27,8 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--body-scanner-color);
-  border-radius: 8px;
-  padding: 20px 20px;
-  border: 1px solid #444;
+  padding: 20px 10px;
+  border-bottom: 1px solid #444;
   height: 30px;
 }
 
@@ -107,17 +109,17 @@
 }
 
 .close-modal {
- width: 90px;
+  width: 90px;
 }
 
-button{
-    border: none;
+button {
+  border: none;
   background: none;
   padding: 0;
   margin: 0;
   cursor: pointer;
 }
 
-mat-icon{
-  color: white
+mat-icon {
+  color: white;
 }

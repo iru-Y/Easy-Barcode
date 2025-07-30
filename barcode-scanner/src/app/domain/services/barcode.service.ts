@@ -48,4 +48,12 @@ export class BarcodeService {
   setBarcodes(barcodes: ScannerFileDto[]) {
     this.barcodesSubject.next(barcodes);
   }
+
+  async deleteBarcodeByFilename(filename: string): Promise<void> {
+  await firstValueFrom(this.http.delete(`${this.url}/${filename}`));
+
+  const updated = this.barcodesSubject.value.filter(b => b.filename !== filename);
+  this.barcodesSubject.next(updated);
+}
+
 }
