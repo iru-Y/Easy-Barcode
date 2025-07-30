@@ -164,4 +164,26 @@ public class BarcodeService {
             throw e;
         }
     }
+    public boolean deleteFileByName(String filenameWithoutExtension) {
+        try {
+            String publicId = "scanner-files/" + filenameWithoutExtension.replace(".csv", "");
+
+            Map result = cloudinary.uploader().destroy(publicId, ObjectUtils.asMap(
+                    "resource_type", "raw"
+            ));
+
+            String status = (String) result.get("result");
+            if ("ok".equals(status)) {
+                log.info("🗑️ Arquivo deletado do Cloudinary: {}", publicId);
+                return true;
+            } else {
+                log.warn("⚠️ Tentativa de deletar falhou ou arquivo não encontrado: {}", publicId);
+                return false;
+            }
+        } catch (Exception e) {
+            log.error("❌ Erro ao deletar arquivo no Cloudinary", e);
+            return false;
+        }
+    }
+
 }

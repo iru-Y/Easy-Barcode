@@ -84,7 +84,16 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit, OnDestroy
       this.desiredCount = isNaN(num) || num < 1 ? null : num;
     });
 
-   
+    this.loadScannedFiles();
+  }
+
+  async loadScannedFiles() {
+    try {
+      this.scannedFiles = await this.barcodeService.getUploadedBarcodes();
+    } catch {
+      this.scannedFiles = [];
+      this.alertService.show('Erro ao carregar arquivos escaneados.');
+    }
   }
 
   ngAfterViewInit(): void {
@@ -245,6 +254,7 @@ export class BarcodeScannerComponent implements OnInit, AfterViewInit, OnDestroy
       this.scannedBarcodes = [];
       this.countControl.setValue('');
       this.countControl.markAsUntouched();
+      await this.loadScannedFiles();
       this.dialogRef.close();
     } catch (e) {
       this.alertService.show('Erro ao enviar os barcodes.');

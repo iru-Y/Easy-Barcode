@@ -57,4 +57,21 @@ public class BarcodeController {
             return ResponseEntity.status(500).body(null);
         }
     }
+    @DeleteMapping("/{filename}")
+    public ResponseEntity<?> deleteByFilename(@PathVariable String filename) {
+        log.info("🗑️ Requisição para deletar arquivo: {}", filename);
+
+        if (filename == null || filename.trim().isEmpty()) {
+            return ResponseEntity.badRequest().body(Map.of("error", "Filename não pode ser vazio"));
+        }
+
+        boolean deleted = barcodeService.deleteFileByName(filename);
+
+        if (deleted) {
+            return ResponseEntity.noContent().build(); // 204
+        } else {
+            return ResponseEntity.status(404).body(Map.of("error", "Arquivo não encontrado ou falha ao deletar"));
+        }
+    }
+
 }
