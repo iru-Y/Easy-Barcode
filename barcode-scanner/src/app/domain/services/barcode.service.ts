@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { firstValueFrom } from 'rxjs';
+import { BehaviorSubject, firstValueFrom, Observable } from 'rxjs';
 import { ScannerFileDto } from '../models/scanner-file-dto';
 import { environment } from '../../../environments/environment';
 
@@ -8,7 +8,10 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root',
 })
 export class BarcodeService {
-  url: string =  `${environment.apiUrl}/barcode` ;
+  private url = `${environment.apiUrl}/barcode`;
+
+  private barcodesSubject = new BehaviorSubject<ScannerFileDto[]>([]);
+  barcodes$ = this.barcodesSubject.asObservable();
 
   constructor(private http: HttpClient) {}
 
@@ -17,17 +20,32 @@ export class BarcodeService {
     barcodes: string[]
   ): Promise<ScannerFileDto> {
     const body = { filename, barcodes };
-
-    return await firstValueFrom(
+    const result = await firstValueFrom(
       this.http.post<ScannerFileDto>(`${this.url}`, body, {
         headers: { 'Content-Type': 'application/json' },
       })
     );
+
+    const current = this.barcodesSubject.value;
+    this.barcodesSubject.next([...current, result]);
+
+    return result;
   }
 
   async getUploadedBarcodes(): Promise<ScannerFileDto[]> {
-    return await firstValueFrom(
+    const result = await firstValueFrom(
       this.http.get<ScannerFileDto[]>(`${this.url}`)
     );
+
+    this.barcodesSubject.next(result);
+    return result;
+  }
+
+  getBarcodes(): Observable<ScannerFileDto[]> {
+    return this.barcodes$;
+  }
+
+  setBarcodes(barcodes: ScannerFileDto[]) {
+    this.barcodesSubject.next(barcodes);
   }
 }

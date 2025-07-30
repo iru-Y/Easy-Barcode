@@ -43,14 +43,12 @@
       <p class="scan-time">
         Escaneado em {{ selectedDate | date: 'dd/MM/yyyy HH:mm' }}
       </p>
-      <button
-        mat-raised-button
-        color="warn"
+        <button
+        mat-flat-button
         class="close-modal"
         (click)="closeModal()"
-      >
-        Fechar
-      </button>
+        > Fechar</button>
     </div>
   </div>
 }
+<app-footer-nav></app-footer-nav>

@@ -13,11 +13,12 @@ import { provideRouter } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { ScanListComponent } from './scan-list/scan-list.component';
 
 export const routes = [
   { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'files', component: LoginComponent },   // temporário
+  { path: 'files', component: ScanListComponent },   // temporário
   { path: 'cloud', component: LoginComponent },
   { path: 'profile', component: LoginComponent },
 ];

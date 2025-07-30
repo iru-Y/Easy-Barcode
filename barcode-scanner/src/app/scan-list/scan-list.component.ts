@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { BarcodeService } from '../../../domain/services/barcode.service';
-import { ScannerFileDto } from '../../../domain/models/scanner-file-dto';
+import { BarcodeService } from '../domain/services/barcode.service';
+import { ScannerFileDto } from '../domain/models/scanner-file-dto';
 import { MatIcon } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-
+import { FooterNavComponent } from "../footer-nav/footer-nav.component";
+import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-scan-list',
   standalone: true,
-  imports: [MatIcon, CommonModule],
+  imports: [MatIcon, CommonModule, FooterNavComponent, MatButtonModule],
   templateUrl: './scan-list.component.html',
   styleUrls: ['./scan-list.component.css'],
 })
@@ -16,12 +17,20 @@ export class ScanListComponent implements OnInit {
   selectedDate: Date | null = null;
   code: string[] = [];
   modalOpen = false;
+  scannedFiles: ScannerFileDto[] = [];
 
   constructor(private barcodeService: BarcodeService) {}
 
   async ngOnInit() {
-    this.barcodes = await this.barcodeService.getUploadedBarcodes();
+  this.barcodeService.getBarcodes().subscribe((data) => {
+    this.barcodes = data;
+  });
+
+  if (this.barcodes.length === 0) {
+    await this.barcodeService.getUploadedBarcodes();
   }
+}
+
 
   openModal(item: ScannerFileDto) {
     this.code = item.barcodes ?? [];
