@@ -2,7 +2,6 @@
 
 html, body {
   margin: 0;
-  font-family: Arial, sans-serif;
   overflow-x: hidden;
 }
 li, ul {
@@ -27,6 +26,8 @@ p{
   --body-scanner-color: #262626;
   --secondary-border:1px solid #a2a7af;
   --dark-color: #1d1c1c;
+  --soft-font-color: #6b7280;
+  --btn-color: #4b5563;
 }
 
 mat-icon {

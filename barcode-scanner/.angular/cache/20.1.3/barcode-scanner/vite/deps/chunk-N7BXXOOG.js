@@ -79,6 +79,21 @@ var Platform = class _Platform {
   }], () => [], null);
 })();
 
+// node_modules/@angular/cdk/fesm2022/element-x4z00URv.mjs
+init_define_NGX_ENV();
+function coerceNumberProperty(value, fallbackValue = 0) {
+  if (_isNumberValue(value)) {
+    return Number(value);
+  }
+  return arguments.length === 2 ? fallbackValue : 0;
+}
+function _isNumberValue(value) {
+  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
+}
+function coerceElement(elementOrRef) {
+  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
+}
+
 // node_modules/@angular/cdk/fesm2022/style-loader-B2sGQXxD.mjs
 init_define_NGX_ENV();
 var appsWithLoaders = /* @__PURE__ */ new WeakMap();
@@ -129,25 +144,10 @@ var _CdkPrivateStyleLoader = class __CdkPrivateStyleLoader {
   }], null, null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/element-x4z00URv.mjs
-init_define_NGX_ENV();
-function coerceNumberProperty(value, fallbackValue = 0) {
-  if (_isNumberValue(value)) {
-    return Number(value);
-  }
-  return arguments.length === 2 ? fallbackValue : 0;
-}
-function _isNumberValue(value) {
-  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
-}
-function coerceElement(elementOrRef) {
-  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
-}
-
 export {
   Platform,
-  _CdkPrivateStyleLoader,
   coerceNumberProperty,
-  coerceElement
+  coerceElement,
+  _CdkPrivateStyleLoader
 };
-//# sourceMappingURL=chunk-QAHM36L4.js.map
+//# sourceMappingURL=chunk-N7BXXOOG.js.map

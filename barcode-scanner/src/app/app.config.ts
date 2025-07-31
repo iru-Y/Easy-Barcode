@@ -32,5 +32,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideAnimations(),
     importProvidersFrom(CommonModule),
+    
   ],
 };

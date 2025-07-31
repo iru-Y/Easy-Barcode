@@ -890,15 +890,6 @@ var ObserversModule = class _ObserversModule {
   }], null, null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/keycodes.mjs
-init_define_NGX_ENV();
-function hasModifierKey(event, ...modifiers) {
-  if (modifiers.length) {
-    return modifiers.some((modifier) => event[modifier]);
-  }
-  return event.altKey || event.shiftKey || event.ctrlKey || event.metaKey;
-}
-
 // node_modules/@angular/cdk/fesm2022/id-generator-LuoRZSid.mjs
 init_define_NGX_ENV();
 var counters = {};
@@ -934,6 +925,15 @@ var _IdGenerator = class __IdGenerator {
     }]
   }], null, null);
 })();
+
+// node_modules/@angular/cdk/fesm2022/keycodes.mjs
+init_define_NGX_ENV();
+function hasModifierKey(event, ...modifiers) {
+  if (modifiers.length) {
+    return modifiers.some((modifier) => event[modifier]);
+  }
+  return event.altKey || event.shiftKey || event.ctrlKey || event.metaKey;
+}
 
 // node_modules/@angular/cdk/fesm2022/a11y.mjs
 init_define_NGX_ENV();
@@ -2788,8 +2788,8 @@ export {
   InteractivityChecker,
   FocusTrapFactory,
   A11yModule,
-  hasModifierKey,
   _IdGenerator,
+  hasModifierKey,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-JBHZIKHY.js.map
+//# sourceMappingURL=chunk-OFJ4K67M.js.map

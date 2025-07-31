@@ -1,46 +1,21 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   MediaMatcher
-} from "./chunk-JBHZIKHY.js";
+} from "./chunk-BQYHHPLY.js";
 import {
   ANIMATION_MODULE_TYPE,
   InjectionToken,
   NgModule,
   inject,
-  require_operators,
   setClassMetadata,
   ɵɵdefineInjector,
   ɵɵdefineNgModule
-} from "./chunk-ZKTYM5A3.js";
+} from "./chunk-X4JJA723.js";
 import {
-  require_cjs
-} from "./chunk-7PKMMMJG.js";
-import {
-  __toESM,
   init_define_NGX_ENV
-} from "./chunk-7QIYBU4T.js";
-
-// node_modules/@angular/cdk/fesm2022/coercion.mjs
-init_define_NGX_ENV();
-
-// node_modules/@angular/cdk/fesm2022/css-pixel-value-C_HEqLhI.mjs
-init_define_NGX_ENV();
-function coerceCssPixelValue(value) {
-  if (value == null) {
-    return "";
-  }
-  return typeof value === "string" ? value : `${value}px`;
-}
-
-// node_modules/@angular/cdk/fesm2022/coercion.mjs
-function coerceBooleanProperty(value) {
-  return value != null && `${value}` !== "false";
-}
+} from "./chunk-TG4IPNUP.js";
 
 // node_modules/@angular/cdk/fesm2022/layout.mjs
 init_define_NGX_ENV();
-var import_rxjs = __toESM(require_cjs(), 1);
-var import_operators = __toESM(require_operators(), 1);
 var LayoutModule = class _LayoutModule {
   static ɵfac = function LayoutModule_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _LayoutModule)();
@@ -72,16 +47,21 @@ function _animationsDisabled() {
   return _getAnimationsState() !== "enabled";
 }
 
-// node_modules/@angular/cdk/fesm2022/test-environment-CT0XxPyp.mjs
+// node_modules/@angular/cdk/fesm2022/coercion.mjs
 init_define_NGX_ENV();
-function _isTestEnvironment() {
-  return (
-    // @ts-ignore
-    typeof __karma__ !== "undefined" && !!__karma__ || // @ts-ignore
-    typeof jasmine !== "undefined" && !!jasmine || // @ts-ignore
-    typeof jest !== "undefined" && !!jest || // @ts-ignore
-    typeof Mocha !== "undefined" && !!Mocha
-  );
+
+// node_modules/@angular/cdk/fesm2022/css-pixel-value-C_HEqLhI.mjs
+init_define_NGX_ENV();
+function coerceCssPixelValue(value) {
+  if (value == null) {
+    return "";
+  }
+  return typeof value === "string" ? value : `${value}px`;
+}
+
+// node_modules/@angular/cdk/fesm2022/coercion.mjs
+function coerceBooleanProperty(value) {
+  return value != null && `${value}` !== "false";
 }
 
 // node_modules/@angular/cdk/fesm2022/scrolling-BkvA05C8.mjs
@@ -142,13 +122,25 @@ function getRtlScrollAxisType() {
   return rtlScrollAxisType;
 }
 
+// node_modules/@angular/cdk/fesm2022/test-environment-CT0XxPyp.mjs
+init_define_NGX_ENV();
+function _isTestEnvironment() {
+  return (
+    // @ts-ignore
+    typeof __karma__ !== "undefined" && !!__karma__ || // @ts-ignore
+    typeof jasmine !== "undefined" && !!jasmine || // @ts-ignore
+    typeof jest !== "undefined" && !!jest || // @ts-ignore
+    typeof Mocha !== "undefined" && !!Mocha
+  );
+}
+
 export {
-  _isTestEnvironment,
-  coerceCssPixelValue,
+  _animationsDisabled,
   RtlScrollAxisType,
   supportsScrollBehavior,
   getRtlScrollAxisType,
-  coerceBooleanProperty,
-  _animationsDisabled
+  _isTestEnvironment,
+  coerceCssPixelValue,
+  coerceBooleanProperty
 };
-//# sourceMappingURL=chunk-BXE7OQII.js.map
+//# sourceMappingURL=chunk-Z52Y7YOL.js.map

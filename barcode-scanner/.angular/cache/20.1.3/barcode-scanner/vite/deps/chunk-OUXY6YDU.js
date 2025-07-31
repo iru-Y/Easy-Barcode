@@ -1,19 +1,17 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   _animationsDisabled
-} from "./chunk-BXE7OQII.js";
+} from "./chunk-Z52Y7YOL.js";
 import {
-  MatCommonModule,
   _getEventTarget,
   isFakeMousedownFromScreenReader,
   isFakeTouchstartFromScreenReader,
   normalizePassiveListenerOptions
-} from "./chunk-JBHZIKHY.js";
+} from "./chunk-BQYHHPLY.js";
 import {
   Platform,
   _CdkPrivateStyleLoader,
   coerceElement
-} from "./chunk-YWYXDM7G.js";
+} from "./chunk-N7BXXOOG.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -22,21 +20,49 @@ import {
   InjectionToken,
   Injector,
   Input,
-  NgModule,
   NgZone,
   ViewEncapsulation,
   inject,
   setClassMetadata,
   ɵɵclassProp,
   ɵɵdefineComponent,
-  ɵɵdefineDirective,
-  ɵɵdefineInjector,
-  ɵɵdefineNgModule
-} from "./chunk-ZKTYM5A3.js";
+  ɵɵdefineDirective
+} from "./chunk-X4JJA723.js";
 import {
   __spreadValues,
   init_define_NGX_ENV
-} from "./chunk-7QIYBU4T.js";
+} from "./chunk-TG4IPNUP.js";
+
+// node_modules/@angular/material/fesm2022/structural-styles-CObeNzjn.mjs
+init_define_NGX_ENV();
+var _StructuralStylesLoader = class __StructuralStylesLoader {
+  static ɵfac = function _StructuralStylesLoader_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || __StructuralStylesLoader)();
+  };
+  static ɵcmp = ɵɵdefineComponent({
+    type: __StructuralStylesLoader,
+    selectors: [["structural-styles"]],
+    decls: 0,
+    vars: 0,
+    template: function _StructuralStylesLoader_Template(rf, ctx) {
+    },
+    styles: ['.mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus::before{content:""}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n'],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_StructuralStylesLoader, [{
+    type: Component,
+    args: [{
+      selector: "structural-styles",
+      encapsulation: ViewEncapsulation.None,
+      template: "",
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      styles: ['.mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus::before{content:""}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n']
+    }]
+  }], null, null);
+})();
 
 // node_modules/@angular/material/fesm2022/ripple-BMyyyLz2.mjs
 init_define_NGX_ENV();
@@ -613,68 +639,11 @@ var MatRipple = class _MatRipple {
   });
 })();
 
-// node_modules/@angular/material/fesm2022/structural-styles-CObeNzjn.mjs
-init_define_NGX_ENV();
-var _StructuralStylesLoader = class __StructuralStylesLoader {
-  static ɵfac = function _StructuralStylesLoader_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || __StructuralStylesLoader)();
-  };
-  static ɵcmp = ɵɵdefineComponent({
-    type: __StructuralStylesLoader,
-    selectors: [["structural-styles"]],
-    decls: 0,
-    vars: 0,
-    template: function _StructuralStylesLoader_Template(rf, ctx) {
-    },
-    styles: ['.mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus::before{content:""}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n'],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_StructuralStylesLoader, [{
-    type: Component,
-    args: [{
-      selector: "structural-styles",
-      encapsulation: ViewEncapsulation.None,
-      template: "",
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      styles: ['.mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus::before{content:""}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n']
-    }]
-  }], null, null);
-})();
-
-// node_modules/@angular/material/fesm2022/index-BRImSAOu.mjs
-init_define_NGX_ENV();
-var MatRippleModule = class _MatRippleModule {
-  static ɵfac = function MatRippleModule_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatRippleModule)();
-  };
-  static ɵmod = ɵɵdefineNgModule({
-    type: _MatRippleModule,
-    imports: [MatCommonModule, MatRipple],
-    exports: [MatRipple, MatCommonModule]
-  });
-  static ɵinj = ɵɵdefineInjector({
-    imports: [MatCommonModule, MatCommonModule]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatRippleModule, [{
-    type: NgModule,
-    args: [{
-      imports: [MatCommonModule, MatRipple],
-      exports: [MatRipple, MatCommonModule]
-    }]
-  }], null, null);
-})();
-
 export {
+  _StructuralStylesLoader,
   defaultRippleAnimationConfig,
   RippleRenderer,
   MAT_RIPPLE_GLOBAL_OPTIONS,
-  MatRipple,
-  _StructuralStylesLoader,
-  MatRippleModule
+  MatRipple
 };
-//# sourceMappingURL=chunk-V3RQKEYQ.js.map
+//# sourceMappingURL=chunk-OUXY6YDU.js.map

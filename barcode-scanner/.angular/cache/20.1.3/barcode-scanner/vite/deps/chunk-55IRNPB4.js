@@ -1,22 +1,21 @@
-import { createRequire } from 'module';const require = createRequire(import.meta.url);
 import {
   _animationsDisabled,
   coerceBooleanProperty
-} from "./chunk-BXE7OQII.js";
+} from "./chunk-Z52Y7YOL.js";
 import {
   MatCommonModule,
   ObserversModule,
   _IdGenerator
-} from "./chunk-JBHZIKHY.js";
+} from "./chunk-BQYHHPLY.js";
 import {
   Platform
-} from "./chunk-YWYXDM7G.js";
+} from "./chunk-N7BXXOOG.js";
 import {
   Directionality
-} from "./chunk-FVX277YZ.js";
+} from "./chunk-MWBS6PCZ.js";
 import {
   NgTemplateOutlet
-} from "./chunk-FDORV5XV.js";
+} from "./chunk-32ZYWBSP.js";
 import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
@@ -38,7 +37,6 @@ import {
   computed,
   contentChild,
   inject,
-  require_operators,
   setClassMetadata,
   signal,
   viewChild,
@@ -80,19 +78,25 @@ import {
   ɵɵtextInterpolate,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
-} from "./chunk-ZKTYM5A3.js";
+} from "./chunk-X4JJA723.js";
 import {
-  require_cjs
-} from "./chunk-7PKMMMJG.js";
+  Observable,
+  Subject,
+  Subscription,
+  filter,
+  map,
+  merge,
+  pairwise,
+  shareReplay,
+  startWith,
+  takeUntil
+} from "./chunk-RVZ5CSLY.js";
 import {
-  __toESM,
   init_define_NGX_ENV
-} from "./chunk-7QIYBU4T.js";
+} from "./chunk-TG4IPNUP.js";
 
 // node_modules/@angular/cdk/fesm2022/observers/private.mjs
 init_define_NGX_ENV();
-var import_rxjs = __toESM(require_cjs(), 1);
-var import_operators = __toESM(require_operators(), 1);
 var loopLimitExceededErrorHandler = (e) => {
   if (e instanceof ErrorEvent && e.message === "ResizeObserver loop limit exceeded") {
     console.error(`${e.message}. This could indicate a performance issue with your app. See https://github.com/WICG/resize-observer/blob/master/explainer.md#error-handling`);
@@ -101,9 +105,9 @@ var loopLimitExceededErrorHandler = (e) => {
 var SingleBoxSharedResizeObserver = class {
   _box;
   /** Stream that emits when the shared observer is destroyed. */
-  _destroyed = new import_rxjs.Subject();
+  _destroyed = new Subject();
   /** Stream of all events from the ResizeObserver. */
-  _resizeSubject = new import_rxjs.Subject();
+  _resizeSubject = new Subject();
   /** ResizeObserver used to observe element resize events. */
   _resizeObserver;
   /** A map of elements to streams of their resize events. */
@@ -121,7 +125,7 @@ var SingleBoxSharedResizeObserver = class {
    */
   observe(target) {
     if (!this._elementObservables.has(target)) {
-      this._elementObservables.set(target, new import_rxjs.Observable((observer) => {
+      this._elementObservables.set(target, new Observable((observer) => {
         const subscription = this._resizeSubject.subscribe(observer);
         this._resizeObserver?.observe(target, {
           box: this._box
@@ -132,15 +136,15 @@ var SingleBoxSharedResizeObserver = class {
           this._elementObservables.delete(target);
         };
       }).pipe(
-        (0, import_operators.filter)((entries) => entries.some((entry) => entry.target === target)),
+        filter((entries) => entries.some((entry) => entry.target === target)),
         // Share a replay of the last event so that subsequent calls to observe the same element
         // receive initial sizing info like the first one. Also enable ref counting so the
         // element will be automatically unobserved when there are no more subscriptions.
-        (0, import_operators.shareReplay)({
+        shareReplay({
           bufferSize: 1,
           refCount: true
         }),
-        (0, import_operators.takeUntil)(this._destroyed)
+        takeUntil(this._destroyed)
       ));
     }
     return this._elementObservables.get(target);
@@ -207,8 +211,6 @@ var SharedResizeObserver = class _SharedResizeObserver {
 
 // node_modules/@angular/material/fesm2022/form-field-D9B5IUZf.mjs
 init_define_NGX_ENV();
-var import_rxjs2 = __toESM(require_cjs(), 1);
-var import_operators2 = __toESM(require_operators(), 1);
 var _c0 = ["notch"];
 var _c1 = ["matFormFieldNotchedOutline", ""];
 var _c2 = ["*"];
@@ -575,7 +577,7 @@ var MatFormFieldFloatingLabel = class _MatFormFieldFloatingLabel {
   /** The parent form-field. */
   _parent = inject(FLOATING_LABEL_PARENT);
   /** The current resize event subscription. */
-  _resizeSubscription = new import_rxjs2.Subscription();
+  _resizeSubscription = new Subscription();
   constructor() {
   }
   ngOnDestroy() {
@@ -994,7 +996,7 @@ var MatFormField = class _MatFormField {
   set _control(value) {
     this._explicitFormFieldControl = value;
   }
-  _destroyed = new import_rxjs2.Subject();
+  _destroyed = new Subject();
   _isFocused = null;
   _explicitFormFieldControl;
   _previousControl = null;
@@ -1090,12 +1092,12 @@ var MatFormField = class _MatFormField {
       this._changeDetectorRef.markForCheck();
     });
     this._describedByChanges?.unsubscribe();
-    this._describedByChanges = control.stateChanges.pipe((0, import_operators2.startWith)([void 0, void 0]), (0, import_operators2.map)(() => [control.errorState, control.userAriaDescribedBy]), (0, import_operators2.pairwise)(), (0, import_operators2.filter)(([[prevErrorState, prevDescribedBy], [currentErrorState, currentDescribedBy]]) => {
+    this._describedByChanges = control.stateChanges.pipe(startWith([void 0, void 0]), map(() => [control.errorState, control.userAriaDescribedBy]), pairwise(), filter(([[prevErrorState, prevDescribedBy], [currentErrorState, currentDescribedBy]]) => {
       return prevErrorState !== currentErrorState || prevDescribedBy !== currentDescribedBy;
     })).subscribe(() => this._syncDescribedByIds());
     this._valueChanges?.unsubscribe();
     if (control.ngControl && control.ngControl.valueChanges) {
-      this._valueChanges = control.ngControl.valueChanges.pipe((0, import_operators2.takeUntil)(this._destroyed)).subscribe(() => this._changeDetectorRef.markForCheck());
+      this._valueChanges = control.ngControl.valueChanges.pipe(takeUntil(this._destroyed)).subscribe(() => this._changeDetectorRef.markForCheck());
     }
   }
   _checkPrefixAndSuffixTypes() {
@@ -1107,7 +1109,7 @@ var MatFormField = class _MatFormField {
   /** Initializes the prefix and suffix containers. */
   _initializePrefixAndSuffix() {
     this._checkPrefixAndSuffixTypes();
-    (0, import_rxjs2.merge)(this._prefixChildren.changes, this._suffixChildren.changes).subscribe(() => {
+    merge(this._prefixChildren.changes, this._suffixChildren.changes).subscribe(() => {
       this._checkPrefixAndSuffixTypes();
       this._changeDetectorRef.markForCheck();
     });
@@ -1659,4 +1661,4 @@ export {
   MatFormField,
   MatFormFieldModule
 };
-//# sourceMappingURL=chunk-YHUHIT4A.js.map
+//# sourceMappingURL=chunk-55IRNPB4.js.map
